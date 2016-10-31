@@ -1,1 +1,1 @@
-angular.module('blankApp', ['ngRoute']);
+angular.module('blankApp', ['ngRoute', 'tw.directives.clickOutside']);
