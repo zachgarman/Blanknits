@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="blankApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Blanknits - Hand-made, Personalized Blankets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="assets/vendors/angular.min.js"></script>
+    <script src="assets/vendors/angular-route.min.js"></script>
+    <script src="scripts/app.module.js"></script>
+    <script src="scripts/app.config.js"></script>
+    <script src="scripts/nav.controller.js"></script>
+
+    <link rel="stylesheet" href="assets/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+
+    <base href="/home" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavController as nav">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="logo" href="/home"><img src="assets/images/Main-Logo.png" alt="Blanknits logo" /></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <!-- Add class="collapse" to above div to make navbar disappear when small -->
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/home">Home</a></li>
+              <li><a href="/gallery">Gallery</a></li>
+              <li><a href="/materials">Materials</a></li>
+              <li><a href="/order">Order</a></li>
+              <li><a href="/aboutUs">About Us</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-menu">
+            <button ng-click="nav.showDropdown()" class="dropdownButton btn">Menu</button>
+            <div ng-show="nav.show" id="dropdown" class="dropdown-content">
+              <a href="/home">Home</a>
+              <a href="/gallery">Gallery</a>
+              <a href="/materials">Materials</a>
+              <a href="/order">Order</a>
+              <a href="/aboutUs">About Us</a>
+            </div>
+          </div>
+
+        </div>
+      </nav>
+
+      <main>
+        <ng-view>
+        </ng-view>
+
+      </main>
+    </div>
+  </body>
+</html>
