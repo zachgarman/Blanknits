@@ -2,7 +2,7 @@ angular.module('blankApp')
        .controller('NavController', NavController);
 
 function NavController() {
-  console.log('Controller works!');
+  console.log('NavController works!');
 
   var nav = this;
 

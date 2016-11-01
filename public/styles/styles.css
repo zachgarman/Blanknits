@@ -109,8 +109,21 @@ main {
         display:block !important;
     }
 }
+footer {
+  text-align: center;
+  height: 40px;
+}
+.footer-logo {
+  width: 200px;
+}
+.footer {
+  margin-top: 30px;
+}
 
 /* --- CSS for home.html --- */
+.row {
+  margin-top: 30px;
+}
 #home-image {
   width: 100%;
   height: 500px;
@@ -182,16 +195,38 @@ main {
   width: 300px;
   margin: 20px auto;
 }
-footer {
+.req-info input, .req-info textarea, .req-info button {
+  width: 100%;
+  margin: 5px;
+  font-size: 18px;
+  color: #222;
+  padding: 8px;
+}
+.req-info {
   text-align: center;
-  height: 40px;
+  width: 80%;
+  display: inline-block;
 }
-.footer-logo {
-  width: 200px;
+.center-heading {
+  margin-left: 80px;
 }
-.footer {
-  margin-top: 30px;
+.center-form {
+  text-align: center;
 }
-.row {
-  margin-top: 30px;
+.req-info textarea {
+  height: 6em;
+}
+.req-info input, .req-info textarea {
+  background-color: #eceff1;
+  border-radius: 5px;
+}
+.req-info button {
+  background-color: #222;
+  border: 1px solid gray;
+  color: gray;
+  width: 300px;
+}
+.req-info button:hover {
+  border: 1px solid #eceff1;
+  color: #eceff1;
 }

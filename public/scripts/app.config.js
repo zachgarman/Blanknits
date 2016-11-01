@@ -4,6 +4,7 @@ angular.module('blankApp')
 
          $routeProvider.when('/home', {
            templateUrl: 'views/home.html',
+           controller: 'HomeController as home',
          }).when('/gallery', {
            templateUrl: 'views/gallery.html',
          }).when('/materials', {
