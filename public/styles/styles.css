@@ -11,7 +11,11 @@ body {
   text-align: center;
 }
 .nav > li:last-child {
-    border-right: 1px solid gray;
+  border-right: 1px solid gray;
+}
+.nav > li:hover {
+  border-left: 1px solid #eceff1;
+  border-right: 1px solid #eceff1;
 }
 ul {
   padding-right: 100px;
@@ -31,6 +35,7 @@ main {
 }
 .dropdownButton:hover {
   color: #eceff1;
+  border: 1px solid #eceff1;
 }
 .nav-menu {
   position: relative;
@@ -54,6 +59,8 @@ main {
 }
 .dropdown-content a:hover {
   color: #eceff1;
+  border-top: 1px solid #eceff1;
+  border-bottom: 1px solid #eceff1;
 }
 .show {
   display:block;
@@ -108,12 +115,6 @@ main {
   width: 100%;
   height: 500px;
 }
-.greeting {
-  text-align: center;
-}
-.sample {
-  width: 32%;
-}
 #home-image-caption {
   position: relative;
   text-align: center;
@@ -127,7 +128,61 @@ main {
   margin: -30px auto 0 auto;
   width: 240px;
 }
-#home-image-caption:hover > h2, #home-image-caption:hover {
+#home-image-caption > h2:hover {
   color: #fff;
+  border: 1px solid #eceff1;
+}
+#home-image-caption:hover {
   text-decoration: none;
+}
+.greeting {
+  text-align: center;
+}
+.showcase {
+  text-align: center;
+}
+.sample {
+  margin-top: 20px;
+}
+.sample-3 {
+  width: 100%;
+}
+.at-blanknits {
+  text-align: justify;
+}
+.learn-more > h3, .reaction > h3 {
+  text-align: center;
+  background-color: #222;
+  border: 1px solid gray;
+  color: #9d9d9d;
+  padding: 10px 0;
+  width: 330px;
+  margin: 0 auto;
+}
+.learn-more > h3:hover, .reaction > h3:hover {
+  color: #eceff1;
+  border: 1px solid #eceff1;
+}
+.learn-more:hover, .reaction:hover {
+  text-decoration: none;
+}
+.happy-reaction {
+  text-align: center;
+}
+.reaction > h3 {
+  width: 300px;
+  margin: 20px auto;
+}
+.sample-2 {
+  width: 100%;
+}
+footer {
+  text-align: center;
+  height: 40px;
+}
+.footer-logo {
+  width: 200px;
+}
+.footer {
+  margin-top: 30px;
 }
