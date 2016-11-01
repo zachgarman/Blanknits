@@ -141,30 +141,39 @@ main {
 .showcase {
   text-align: center;
 }
+.information {
+  display: flex;
+  align-items: center;
+}
 .sample {
   margin-top: 20px;
 }
-.sample-3 {
+.sample-img {
   width: 100%;
 }
-.at-blanknits {
+.paragraph {
   text-align: justify;
 }
-.learn-more > h3, .reaction > h3 {
+.more > h3, .reaction > h3 {
   text-align: center;
   background-color: #222;
   border: 1px solid gray;
   color: #9d9d9d;
   padding: 10px 0;
-  width: 330px;
   margin: 0 auto;
 }
-.learn-more > h3:hover, .reaction > h3:hover {
+.more > h3:hover, .reaction > h3:hover {
   color: #eceff1;
   border: 1px solid #eceff1;
 }
-.learn-more:hover, .reaction:hover {
+.more:hover, .reaction:hover {
   text-decoration: none;
+}
+.learn-story > h3 {
+  width: 330px;
+}
+.learn-materials > h3 {
+  width: 360px;
 }
 .happy-reaction {
   text-align: center;
@@ -172,9 +181,6 @@ main {
 .reaction > h3 {
   width: 300px;
   margin: 20px auto;
-}
-.sample-2 {
-  width: 100%;
 }
 footer {
   text-align: center;
@@ -184,5 +190,8 @@ footer {
   width: 200px;
 }
 .footer {
+  margin-top: 30px;
+}
+.row {
   margin-top: 30px;
 }
