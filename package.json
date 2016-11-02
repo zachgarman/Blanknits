@@ -20,6 +20,7 @@
     "angular": "^1.5.8",
     "angular-click-outside": "^1.2.0",
     "angular-route": "^1.5.8",
+    "aws-sdk": "^2.6.13",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "express": "^4.14.0",

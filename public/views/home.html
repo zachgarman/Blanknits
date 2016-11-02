@@ -61,11 +61,11 @@
       <p>Please contact us with any questions. </p>
     </div>
     <div class="center-form">
-      <form class="req-info">
-        <input name="name" type="text" placeholder="Your Name" />
-        <input name="email" type="text" placeholder="Email Address" />
-        <input name="telephone" type="text" placeholder="Your Telephone" />
-        <textarea name="message" placeholder="Type your Message"></textarea>
+      <form ng-name="home.reqInfo" class="req-info">
+        <input ng-model="home.name" name="name" type="text" placeholder="Your Name" />
+        <input ng-model="home.email" name="email" type="email" placeholder="Email Address" />
+        <input ng-model="home.phoneNumber" name="telephone" type="number" placeholder="Your Telephone" />
+        <textarea ng-model="home.message" name="message" placeholder="Type your Message"></textarea>
         <button type="submit" ng-click="home.requestInfo()">Send</button>
       </form>
     </div>
