@@ -2,6 +2,9 @@ body {
   background-color: #37474f;
   color: #eceff1;
 }
+p {
+  font-size: 1.3em;
+}
 .logo > img {
   height: 50px;
 }
@@ -21,7 +24,7 @@ ul {
   padding-right: 100px;
 }
 main {
-  margin-top: 75px;
+  margin-top: 50px;
 }
 .nav-menu {
   display: none;
@@ -126,7 +129,7 @@ footer {
 }
 #home-image {
   width: 100%;
-  height: 500px;
+  margin: 0;
 }
 #home-image-caption {
   position: relative;
@@ -139,7 +142,8 @@ footer {
   background-color: #222;
   top: -30px;
   margin: -30px auto 0 auto;
-  width: 240px;
+  padding: 10px 0;
+  width: 260px;
 }
 #home-image-caption > h2:hover {
   color: #fff;
@@ -183,7 +187,7 @@ footer {
   text-decoration: none;
 }
 .learn-story > h3 {
-  width: 330px;
+  width: 220px;
 }
 .learn-materials > h3 {
   width: 360px;
@@ -224,7 +228,8 @@ footer {
   background-color: #222;
   border: 1px solid gray;
   color: gray;
-  width: 300px;
+  width: 200px;
+  font-weight: bold;
 }
 .req-info button:hover {
   border: 1px solid #eceff1;
