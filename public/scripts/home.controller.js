@@ -20,5 +20,6 @@ function HomeController() {
     home.email = '';
     home.phoneNumber = '';
     home.message = '';
+    // Add confirmation that information was sent.
   };
 }
