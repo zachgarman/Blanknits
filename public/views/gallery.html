@@ -1,10 +1,7 @@
-<div class="container">
+<div class="container gallery">
   <h1>Gallery!</h1>
-  <ul class="gallery">
-    <li class="col-md-3 col-xs-4 galleryItem">
-      <div ng-repeat="picture in gallery.allPics">
-        <img class="galleryPic" alt="Blanknits image" ng-src="{{picture.url}}" />
-      </div>
-    </li>
-  </ul>
+
+  <div class="col-lg-3 col-sm-4 col-xs-12 galleryItem" ng-repeat="picture in gallery.allPics">
+    <img class="galleryPic img-responsive" alt="Blanknits image" ng-src="{{picture.url}}" />
+  </div>
 </div>

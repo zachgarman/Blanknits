@@ -239,15 +239,15 @@ footer {
 }
 
 /* --- CSS for gallery.html --- */
-
 .gallery {
   text-align: center;
-  list-style-type: none;
 }
-.gallery li {
-  display: inline;
+.galleryItem {
+  overflow: hidden;
+  height: 20rem;
 }
 .galleryPic {
-  width: 100%;
+  min-width: 100%;
+  overflow: hidden;
   margin-top: 20px;
 }
