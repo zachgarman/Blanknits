@@ -159,7 +159,6 @@ footer {
   text-align: center;
 }
 .information {
-  display: flex;
   align-items: center;
 }
 .sample {
@@ -169,6 +168,8 @@ footer {
   width: 100%;
 }
 .paragraph {
+
+    display: flex;
   text-align: justify;
 }
 .more > h3, .reaction > h3 {
