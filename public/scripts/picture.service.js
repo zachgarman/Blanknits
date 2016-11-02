@@ -3,8 +3,8 @@ angular.module('blankApp')
 
 function PictureService($http) {
 
-
   this.getPics = function($http) {
     console.log('in photos.service');
   };
+  
 }

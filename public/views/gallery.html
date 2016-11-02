@@ -1,1 +1,10 @@
-<h1>Gallery!</h1>
+<div class="container">
+  <h1>Gallery!</h1>
+  <ul class="gallery">
+    <li class="col-md-3 col-xs-4 galleryItem">
+      <div ng-repeat="picture in gallery.allPics">
+        <img class="galleryPic" alt="Blanknits image" ng-src="{{picture.url}}" />
+      </div>
+    </li>
+  </ul>
+</div>

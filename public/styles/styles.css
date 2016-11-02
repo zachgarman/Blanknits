@@ -124,6 +124,7 @@ footer {
 }
 
 /* --- CSS for home.html --- */
+
 .row {
   margin-top: 30px;
 }
@@ -235,4 +236,18 @@ footer {
 .req-info button:hover {
   border: 1px solid #eceff1;
   color: #eceff1;
+}
+
+/* --- CSS for gallery.html --- */
+
+.gallery {
+  text-align: center;
+  list-style-type: none;
+}
+.gallery li {
+  display: inline;
+}
+.galleryPic {
+  width: 100%;
+  margin-top: 20px;
 }
