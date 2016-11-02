@@ -7,6 +7,7 @@ angular.module('blankApp')
            controller: 'HomeController as home',
          }).when('/gallery', {
            templateUrl: 'views/gallery.html',
+           controller: 'GalleryController as gallery',
          }).when('/materials', {
            templateUrl: 'views/materials.html',
          }).when('/order', {

@@ -2,7 +2,7 @@ angular.module('blankApp')
        .controller('HomeController', HomeController);
 
 function HomeController() {
-  console.log('HomeController works!');
+  console.log('HomeController loaded.');
 
   var home = this;
 
