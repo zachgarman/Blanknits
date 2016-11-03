@@ -10,20 +10,23 @@ AWS.config.update({
   region: 'us-west-2',
 });
 
-var s3 = new AWS.S3();
+var params = {
+  Bucket: 'blanknits',
+  Key: 'blanknits/'
+};
+
+var s3bucket = new AWS.S3({params: {Bucket: 'blanknits'}, apiVersion: '2006-03-01' });
 
 router.get('/', function(req, res) {
   console.log('got a request to router');
 
-  var params = {
-    Bucket: 'blanknits',
-    Key: 'blanknits/'
-  };
-  s3.getObject(params, function(err, data) {
+  s3bucket.getObject({Key: 'home/home-image.jpg'}, function(err, data) {
     if (err) {
-      console.log('Error: ', err);
+      console.log('Error querying S3: ', err);
+      res.sendStatus(500);
     } else {
-      console.log('Data: ', data);
+      console.log('Data received from S3: ', data);
+      res.send(data);
     }
   });
 

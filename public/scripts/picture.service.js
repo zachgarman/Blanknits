@@ -12,7 +12,7 @@ function PictureService($http) {
 
     return $http.get('/blankGallery')
       .then(function(response) {
-        return response.data;
+        return response;
       });
   };
 
