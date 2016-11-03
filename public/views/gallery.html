@@ -2,8 +2,6 @@
   <h1>Gallery!</h1>
 
   <div class="col-lg-3 col-sm-4 col-xs-12 galleryItem" ng-repeat="picture in gallery.allPics">
-    <img class="galleryPic img-responsive" alt="Blanknits image" ng-src="{{picture.url}}" />
+    <a href="{{picture.url}}"><img class="galleryPic img-responsive" alt="Blanknits image" ng-src="{{picture.url}}" /></a>
   </div>
 </div>
-
-<button class="btn btn-danger" ng-click="gallery.loadPics()">Load Pics button!</button>

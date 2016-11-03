@@ -11,11 +11,22 @@ function PictureService($http) {
     console.log('got a request to service');
 
     return $http.get('/blankGallery')
-      .then(function(url) {
-        console.log(url.data);
+      .then(function(urls) {
+        console.log(urls);
 
-        return url.data;
+        return urls.data;
       });
   };
+  // this works for a single picture using getSignedUrl
+  // this.getPics = function() {
+  //   console.log('got a request to service');
+  //
+  //   return $http.get('/blankGallery')
+  //     .then(function(url) {
+  //       console.log(url.data);
+  //
+  //       return url.data;
+  //     });
+  // };
 
 }

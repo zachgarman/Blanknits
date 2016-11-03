@@ -5,20 +5,18 @@ function GalleryController(PictureService) {
   console.log('GalleryController loaded.');
   var gallery = this;
 
-  gallery.allPics = [
-    {
-      url: 'https://s3.amazonaws.com/blanknits/Andrew_and_Laci.jpeg',
-    },
-  ];
+  gallery.allPics = [];
 
   gallery.loadPics = function() {
     PictureService.getPics()
                 .then(function(response) {
                   console.log(response);
-                  //gallery.allPics = [{url: response}];
+                  gallery.allPics = response;
+
                 });
 
 
                 //Once get request is received, add items to gallery.allPics array.
   };
+  gallery.loadPics();
 }
