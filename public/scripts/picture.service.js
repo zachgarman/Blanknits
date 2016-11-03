@@ -8,7 +8,6 @@ function PictureService($http) {
 
   // Send request to server to get pics from database.
   this.getPics = function() {
-    console.log('got a request to service');
 
     return $http.get('/blankGallery')
       .then(function(urls) {
@@ -17,16 +16,17 @@ function PictureService($http) {
         return urls.data;
       });
   };
+
   // this works for a single picture using getSignedUrl
-  // this.getPics = function() {
-  //   console.log('got a request to service');
-  //
-  //   return $http.get('/blankGallery')
-  //     .then(function(url) {
-  //       console.log(url.data);
-  //
-  //       return url.data;
-  //     });
-  // };
+  this.getHomeImage = function() {
+    console.log('got a request to service');
+
+    return $http.get('/blankGallery/home')
+      .then(function(response) {
+        console.log(response.data.url);
+
+        return response.data.url;
+      });
+  };
 
 }

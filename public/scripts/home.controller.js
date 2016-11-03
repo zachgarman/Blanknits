@@ -1,7 +1,7 @@
 angular.module('blankApp')
        .controller('HomeController', HomeController);
 
-function HomeController() {
+function HomeController(PictureService) {
   console.log('HomeController loaded.');
 
   var home = this;
@@ -22,4 +22,13 @@ function HomeController() {
     home.message = '';
     // Add confirmation that information was sent.
   };
+  home.homeImageUrl = '';
+  home.getHomeImage = function () {
+    PictureService.getHomeImage()
+                  .then(function(response) {
+                    home.homeImageUrl = response;
+                  });
+  };
+  home.getHomeImage();
 }
+// "https://s3-us-west-2.amazonaws.com/blanknits-home/home-image.jpg"

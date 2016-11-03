@@ -8,15 +8,13 @@ function GalleryController(PictureService) {
   gallery.allPics = [];
 
   gallery.loadPics = function() {
-    PictureService.getPics()
-                .then(function(response) {
-                  console.log(response);
-                  gallery.allPics = response;
-
-                });
-
-
-                //Once get request is received, add items to gallery.allPics array.
+      PictureService.getPics()
+                    .then(function(response) {
+                      gallery.allPics = response;
+                    });
   };
-  gallery.loadPics();
+
+  if (gallery.allPics.length == 0) {
+    gallery.loadPics();
+  }
 }
