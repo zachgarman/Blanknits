@@ -9,18 +9,6 @@ function GalleryController(PictureService) {
     {
       url: 'https://s3.amazonaws.com/blanknits/Andrew_and_Laci.jpeg',
     },
-    {
-      url: 'https://s3.amazonaws.com/blanknits/Isabel.jpeg',
-    },
-    {
-      url: 'https://s3.amazonaws.com/blanknits/Austen.jpeg',
-    },
-    {
-      url: 'https://s3.amazonaws.com/blanknits/Brayden.jpeg',
-    },
-    {
-      url: 'https://s3.amazonaws.com/blanknits/many-blanknits.jpeg',
-    },
   ];
 
   gallery.loadPics = function() {

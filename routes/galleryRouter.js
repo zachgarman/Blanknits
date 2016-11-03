@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const pg = require('pg');
 const AWS = require('aws-sdk');
-const Buffer = require('buffer/').Buffer;
 
 AWS.config.update({
   region: 'us-east-1',
@@ -14,27 +13,17 @@ router.get('/', function(req, res) {
 
 
 
-  s3bucket.getObject({Key: 'home/home-image.jpg'}, function(err, file) {
+  var params = {Bucket: 'blanknits', Key: 'home/home-image.jpg'};
+  s3bucket.getSignedUrl('putObject', params, function(err, url) {
     if (err) {
       console.log('Error querying S3: ', err);
       res.sendStatus(500);
     } else {
-      var url = new Buffer(file.Body).toString('base64');
+      console.log('Url received from S3: ', url);
+
       res.send(url);
     }
   });
-  //
-  // var params = {Bucket: 'blanknits', Key: 'home/home-image.jpg'};
-  // s3.getSignedUrl('putObject', params, function(err, url) {
-  //   if (err) {
-  //     console.log('Error querying S3: ', err);
-  //     res.sendStatus(500);
-  //   } else {
-  //     console.log('Url received from S3: ', url);
-  //
-  //     res.send(url);
-  //   }
-  // });
 });
 
 module.exports = router;
