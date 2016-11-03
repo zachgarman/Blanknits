@@ -26,8 +26,11 @@ function GalleryController(PictureService) {
   gallery.loadPics = function() {
     PictureService.getPics()
                 .then(function(response) {
-                  console.log('Got pics.', response)
+                  console.log(response);
+                  //gallery.allPics = [{url: response}];
                 });
+
+
                 //Once get request is received, add items to gallery.allPics array.
   };
 }

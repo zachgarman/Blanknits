@@ -23,6 +23,7 @@
     "aws-sdk": "^2.6.13",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
+    "buffer": "^5.0.0",
     "dotenv": "^2.0.0",
     "env": "0.0.2",
     "express": "^4.14.0",
