@@ -7,11 +7,11 @@ function PictureService($http) {
 
 
   // Send request to server to get pics from database.
-  this.getPics = function($http) {
+  this.getPics = function() {
     console.log('got a request to service');
-    
+
     return $http.get('/blankGallery')
-      .then(function(respons) {
+      .then(function(response) {
         return response.data;
       });
   };
