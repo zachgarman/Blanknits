@@ -8,8 +8,8 @@ angular.module('blankApp')
          }).when('/gallery', {
            templateUrl: 'views/gallery.html',
            controller: 'GalleryController as gallery',
-         }).when('/materials', {
-           templateUrl: 'views/materials.html',
+         }).when('/products', {
+           templateUrl: 'views/products.html',
          }).when('/order', {
            templateUrl: 'views/order.html',
          }).when('/aboutUs', {

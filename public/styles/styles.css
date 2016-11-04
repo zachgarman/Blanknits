@@ -40,6 +40,9 @@ main {
   color: #eceff1;
   border: 1px solid #eceff1;
 }
+.dropdownButton:focus {
+  outline: none;
+}
 .nav-menu {
   position: relative;
   display: none;
@@ -200,42 +203,21 @@ footer {
   width: 300px;
   margin: 20px auto;
 }
-/*.req-info input, .req-info textarea, .req-info button {
-  width: 100%;
-  margin: 5px;
-  font-size: 18px;
-  color: #222;
-  padding: 8px;
-}
-.req-info {
-  text-align: center;
-  width: 80%;
-  display: inline-block;
-}
-.center-heading {
-  text-align: center;
-}
-.center-form {
-  text-align: center;
-}
-.req-info textarea {
-  height: 6em;
-}
-.req-info input, .req-info textarea {
-  background-color: #eceff1;
-  border-radius: 5px;
-}
-.req-info button {
+.helpFormBtn {
   background-color: #222;
-  border: 1px solid gray;
-  color: gray;
-  width: 200px;
-  font-weight: bold;
+  color: #9d9d9d;
+  border: 1px solid #9d9d9d;
+  font-size: 18px;
+  margin: auto auto;
 }
-.req-info button:hover {
-  border: 1px solid #eceff1;
+.helpFormBtn:hover {
   color: #eceff1;
-}*/
+  border: 1px solid #eceff1;
+}
+.helpFormBtn:focus {
+  outline: none;
+  color: #9d9d9d;
+}
 
 /* --- CSS for gallery.html --- */
 .gallery {
@@ -251,7 +233,19 @@ footer {
   margin-top: 20px;
 }
 
-/* --- CSS for materials.html --- */
+/* --- CSS for products.html --- */
+.difference-image {
+  width: 100%;
+}
+.blanknit-description {
+  text-align: justify;
+}
+.example-heading {
+  width: 250px;
+  margin-left: -10px;
+}
 .example {
-  width: 200px;
+  width: 50%;
+  margin: 20px;
+  float:left;
 }
