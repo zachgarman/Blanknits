@@ -249,3 +249,12 @@ footer {
   margin: 20px;
   float:left;
 }
+
+
+/* --- CSS for aboutUs.html --- */
+.faq-heading {
+  text-align: center;
+}
+.faq {
+  text-align: justify;
+}
