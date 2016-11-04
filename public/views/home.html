@@ -58,20 +58,73 @@
         <a class="reaction" href="/order"><h3>Order Your Own Blanknit!</h3></a>
     </div>
 
-    <div class="questions col-xs-12 col-md-6">
+    <div class="questions col-xs-10 col-md-5 col-md-offset-1 col-xs-offset-2">
       <div class="center-heading">
         <h3>Want more information?</h3>
         <p>Please contact us with any questions. </p>
       </div>
+
       <div class="center-form">
-        <form ng-name="home.reqInfo" class="req-info">
-          <input ng-model="home.name" name="name" type="text" placeholder="Your Name" />
-          <input ng-model="home.email" name="email" type="email" placeholder="Email Address" />
-          <input ng-model="home.phoneNumber" name="telephone" type="number" placeholder="Your Telephone" />
-          <textarea ng-model="home.message" name="message" placeholder="Type your Message"></textarea>
+        <form name="home.reqInfo" class="req-info" novalidate role="form">
+
+          <div class="form-group">
+            <span class="label label-danger" data-ng-show="submitted && home.reqInfo.home.name.$error.required" required>Required!</span>
+            <input data-ng-model="home.name" name="name" type="text" placeholder="Your Name" required/>
+          </div>
+
+          <div class="form-group">
+            <span class="label label-danger" data-ng-show="submitted && helpForm.email.$error.required">Required!</span>
+            <span class="label label-danger" data-ng-show="submitted && helpForm.$error.email">Invalid email!</span>
+            <input ng-model="home.email" name="email" type="email" placeholder="Email Address" required/>
+          </div>
+
+          <div class="form-group">
+            <span class="label label-danger" data-ng-show="submitted && helpForm.$error.url">Invalid Phone Number!</span>
+            <input ng-model="home.phoneNumber" name="telephone" type="number" placeholder="Your Telephone"/>
+          </div>
+
+          <div class="form-group">
+            <span class="label label-danger" data-ng-show="submitted && helpForm.comments.$error.required">Required!</span>
+            <textarea ng-model="home.message" name="message" placeholder="Type your Message" required></textarea>
+          </div>
+
           <button type="submit" ng-click="home.requestInfo()">Submit</button>
         </form>
       </div>
+
     </div>
+
+    <!-- <div data-ng-controller="help">
+  <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+  <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending…</div>
+  <form name="helpForm" novalidate role="form">
+    <div class="form-group">
+      <label for="name">Your Name </label>
+      <span class="label label-danger" data-ng-show="submitted && helpForm.name.$error.required">Required!</span>
+      <input type="text" name="name" data-ng-model="name" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Your E-mail address</label>
+      <span class="label label-danger" data-ng-show="submitted && helpForm.email.$error.required">Required!</span>
+      <span class="label label-danger" data-ng-show="submitted && helpForm.$error.email">Invalid email!</span>
+      <input type="email" name="email" data-ng-model="email" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Your Phone Number</label>
+      <span class="label label-danger" data-ng-show="submitted && helpForm.$error.url">Invalid URL format!</span>
+      <input type="url" name="url" data-ng-model="url" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="comments">Comments</label>
+      <span class="label label-danger" data-ng-show="submitted && helpForm.comments.$error.required">Required!</span>
+      <textarea name="comments" data-ng-model="comments" class="form-control" required></textarea>
+    </div>
+
+    <button data-ng-disabled="progress.active()" data-ng-click="submit(helpForm)" class="btn btn-default">Submit</button>
+  </form>
+</div> -->
   </div>
 </div>

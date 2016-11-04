@@ -2,31 +2,20 @@ angular.module('blankApp')
        .service('PictureService', PictureService);
 
 function PictureService($http) {
-
-  console.log('in photos.service');
-
-
-  // Send request to server to get pics from database.
+  // Send request to server to get all pics from S3.
   this.getPics = function() {
-
     return $http.get('/blankGallery')
       .then(function(urls) {
-        console.log(urls);
-
         return urls.data;
       });
   };
 
-  // this works for a single picture using getSignedUrl
+  // Get the home-page main image, image will be the first one in the bucket if
+  // more than one is present.
   this.getHomeImage = function() {
-    console.log('got a request to service');
-
     return $http.get('/blankGallery/home')
       .then(function(response) {
-        console.log(response.data.url);
-
         return response.data.url;
       });
   };
-
 }

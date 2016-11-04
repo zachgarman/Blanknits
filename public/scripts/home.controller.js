@@ -31,4 +31,3 @@ function HomeController(PictureService) {
   };
   home.getHomeImage();
 }
-// "https://s3-us-west-2.amazonaws.com/blanknits-home/home-image.jpg"

@@ -169,8 +169,7 @@ footer {
   width: 100%;
 }
 .paragraph {
-
-    display: flex;
+  display: flex;
   text-align: justify;
 }
 .more > h3, .reaction > h3 {
@@ -205,7 +204,7 @@ footer {
   width: 100%;
   margin: 5px;
   font-size: 18px;
-  color: #9d9d9d;
+  color: #222;
   padding: 8px;
 }
 .req-info {
@@ -214,7 +213,7 @@ footer {
   display: inline-block;
 }
 .center-heading {
-  margin-left: 80px;
+  text-align: center;
 }
 .center-form {
   text-align: center;
