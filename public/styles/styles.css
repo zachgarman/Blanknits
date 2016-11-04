@@ -200,7 +200,7 @@ footer {
   width: 300px;
   margin: 20px auto;
 }
-.req-info input, .req-info textarea, .req-info button {
+/*.req-info input, .req-info textarea, .req-info button {
   width: 100%;
   margin: 5px;
   font-size: 18px;
@@ -235,7 +235,7 @@ footer {
 .req-info button:hover {
   border: 1px solid #eceff1;
   color: #eceff1;
-}
+}*/
 
 /* --- CSS for gallery.html --- */
 .gallery {

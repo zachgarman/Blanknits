@@ -58,12 +58,12 @@
         <a class="reaction" href="/order"><h3>Order Your Own Blanknit!</h3></a>
     </div>
 
-    <div class="questions col-xs-10 col-md-5 col-md-offset-1 col-xs-offset-2">
+    <div class="questions col-xs-12 col-md-6">
       <div class="center-heading">
         <h3>Want more information?</h3>
         <p>Please contact us with any questions. </p>
       </div>
-
+<!--
       <div class="center-form">
         <form name="home.reqInfo" class="req-info" novalidate role="form">
 
@@ -90,41 +90,40 @@
 
           <button type="submit" ng-click="home.requestInfo()">Submit</button>
         </form>
+      </div> -->
+
+      <div>
+        <div id="messages" class="alert alert-success" data-ng-show="home.messages" data-ng-bind="home.messages"></div>
+        <!-- <div data-ng-show="home.progress.active()" style="color: red; font-size: 50px;">Sending…</div> -->
+        <form name="helpForm" novalidate role="form">
+          <div class="form-group">
+            <label for="name">Your Name </label>
+            <span class="label label-danger" data-ng-show="home.submitted && helpForm.name.$error.required">Required!</span>
+            <input type="text" name="name" data-ng-model="home.name" class="form-control" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your E-mail address</label>
+            <span class="label label-danger" data-ng-show="home.submitted && helpForm.email.$error.required">Required!</span>
+            <span class="label label-danger" data-ng-show="home.submitted && helpForm.$error.email">Invalid email!</span>
+            <input type="email" name="email" data-ng-model="home.email" class="form-control" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phoneNumber">Your Phone Number</label>
+            <span class="label label-danger" data-ng-show="home.submitted && helpForm.$error.phoneNumber">Invalid Phone Number!</span>
+            <input type="number" name="phoneNumber" data-ng-model="home.phoneNumber" class="form-control" />
+          </div>
+
+          <div class="form-group">
+            <label for="comments">Comments</label>
+            <span class="label label-danger" data-ng-show="home.submitted && helpForm.comments.$error.required">Required!</span>
+            <textarea name="comments" data-ng-model="home.comments" class="form-control" required></textarea>
+          </div>
+
+          <button data-ng-disabled="home.progress.active()" data-ng-click="home.submit(helpForm)" class="btn btn-default">Submit</button>
+        </form>
       </div>
-
     </div>
-
-    <!-- <div data-ng-controller="help">
-  <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
-  <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending…</div>
-  <form name="helpForm" novalidate role="form">
-    <div class="form-group">
-      <label for="name">Your Name </label>
-      <span class="label label-danger" data-ng-show="submitted && helpForm.name.$error.required">Required!</span>
-      <input type="text" name="name" data-ng-model="name" class="form-control" required />
-    </div>
-
-    <div class="form-group">
-      <label for="email">Your E-mail address</label>
-      <span class="label label-danger" data-ng-show="submitted && helpForm.email.$error.required">Required!</span>
-      <span class="label label-danger" data-ng-show="submitted && helpForm.$error.email">Invalid email!</span>
-      <input type="email" name="email" data-ng-model="email" class="form-control" required />
-    </div>
-
-    <div class="form-group">
-      <label for="phoneNumber">Your Phone Number</label>
-      <span class="label label-danger" data-ng-show="submitted && helpForm.$error.url">Invalid URL format!</span>
-      <input type="url" name="url" data-ng-model="url" class="form-control" />
-    </div>
-
-    <div class="form-group">
-      <label for="comments">Comments</label>
-      <span class="label label-danger" data-ng-show="submitted && helpForm.comments.$error.required">Required!</span>
-      <textarea name="comments" data-ng-model="comments" class="form-control" required></textarea>
-    </div>
-
-    <button data-ng-disabled="progress.active()" data-ng-click="submit(helpForm)" class="btn btn-default">Submit</button>
-  </form>
-</div> -->
   </div>
 </div>
