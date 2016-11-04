@@ -1,7 +1,7 @@
 angular.module('blankApp')
        .controller('HomeController', HomeController);
 
-function HomeController(PictureService, FormService) {
+function HomeController(PictureService, FormService, $timeout) {
   console.log('HomeController loaded.');
 
   var home = this;
@@ -16,13 +16,10 @@ function HomeController(PictureService, FormService) {
 
     // Default values for the request.
     var formData = {
-      params : {
-        'callback' : 'JSON_CALLBACK',
-        'name' : home.name,
-        'email' : home.email,
-        'phoneNumber' : home.phoneNumber,
-        'comments' : home.comments
-      },
+      'name' : home.name,
+      'email' : home.email,
+      'phoneNumber' : home.phoneNumber,
+      'comments' : home.comments
     };
 
     console.log(formData);
@@ -30,12 +27,17 @@ function HomeController(PictureService, FormService) {
     FormService.sendRequest(formData)
                .then(function(response) {
                  console.log(response);
-                 home.name = null;
-                 home.email = null;
-                 home.phoneNumber = null;
-                 home.comments = null;
-                 home.messages = 'Your form has been sent!';
-                 home.submitted = false;
+                 if (response == 'Success') {
+                   home.name = null;
+                   home.email = null;
+                   home.phoneNumber = null;
+                   home.comments = null;
+                   home.messages = 'Your form has been sent!';
+                   home.submitted = false;
+                   $timeout(function() {
+                     home.messages = '';
+                   }, 3000);
+                 }
                });
     // Track the request and show its progress to the user.
     // home.progress.addPromise($promise);

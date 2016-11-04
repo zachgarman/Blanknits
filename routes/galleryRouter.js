@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const pg = require('pg');
+// const pg = require('pg');
 const AWS = require('aws-sdk');
 
 AWS.config.loadFromPath('./config.json');
@@ -9,7 +9,7 @@ var s3 = new AWS.S3();
 router.get('/home', function(req, res) {
   var params = {Bucket: 'blanknits-home'};
   var homeUrl = {};
-  
+
   s3.listObjects(params, function(err, data) {
     if (err) {
       console.log('Error querying S3', err);

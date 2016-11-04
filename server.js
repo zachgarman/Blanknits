@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const galleryRouter = require('./routes/galleryRouter');
+const emailRouter = require('./routes/emailRouter');
 
 const app = express();
 
@@ -9,8 +10,9 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static('public'));
-
+//routers
 app.use('/blankGallery', galleryRouter);
+app.use('/emailRouter', emailRouter);
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/views/index.html'))
