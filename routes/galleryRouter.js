@@ -2,7 +2,6 @@ const router = require('express').Router();
 // const pg = require('pg');
 const AWS = require('aws-sdk');
 
-AWS.config.loadFromPath('./config.json');
 
 var s3 = new AWS.S3();
 
