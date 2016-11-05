@@ -66,34 +66,34 @@
 
       <div>
         <div id="messages" class="alert alert-success" data-ng-show="home.messages" data-ng-bind="home.messages"></div>
-        <!-- <div data-ng-show="home.progress.active()" style="color: red; font-size: 50px;">Sending…</div> -->
+        <!-- <div data-ng-show="home.progress" style="color: red; font-size: 50px;">Sending…</div> -->
         <form name="helpForm" novalidate role="form">
-          <div class="form-group">
+          <div class="form-group" ng-hide="home.messages">
             <label for="name">Your Name </label>
             <span class="label label-danger" data-ng-show="home.submitted && helpForm.name.$error.required">Required!</span>
             <input type="text" name="name" data-ng-model="home.name" class="form-control" required />
           </div>
 
-          <div class="form-group">
+          <div class="form-group" ng-hide="home.messages">
             <label for="email">Your E-mail address</label>
             <span class="label label-danger" data-ng-show="home.submitted && helpForm.email.$error.required">Required!</span>
             <span class="label label-danger" data-ng-show="home.submitted && helpForm.$error.email">Invalid email!</span>
             <input type="email" name="email" data-ng-model="home.email" class="form-control" required />
           </div>
 
-          <div class="form-group">
+          <div class="form-group" ng-hide="home.messages">
             <label for="phoneNumber">Your Phone Number</label>
             <span class="label label-danger" data-ng-show="home.submitted && helpForm.$error.phoneNumber">Invalid Phone Number!</span>
             <input type="number" name="phoneNumber" data-ng-model="home.phoneNumber" class="form-control" />
           </div>
 
-          <div class="form-group">
+          <div class="form-group" ng-hide="home.messages">
             <label for="comments">Comments</label>
             <span class="label label-danger" data-ng-show="home.submitted && helpForm.comments.$error.required">Required!</span>
             <textarea name="comments" data-ng-model="home.comments" class="form-control" required></textarea>
           </div>
 
-          <button data-ng-disabled="home.progress.active()" data-ng-click="home.submit(helpForm)" class="btn helpFormBtn">Submit</button>
+          <button data-ng-disabled="home.progress" data-ng-click="home.submit(helpForm)" class="btn helpFormBtn">Submit</button>
         </form>
       </div>
     </div>

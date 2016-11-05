@@ -252,9 +252,13 @@ footer {
 
 
 /* --- CSS for aboutUs.html --- */
+.about-margee {
+  padding: 20px;
+}
 .faq-heading {
   text-align: center;
 }
 .faq {
   text-align: justify;
+  background-color: #263238;
 }

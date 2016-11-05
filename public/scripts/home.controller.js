@@ -39,12 +39,10 @@ function HomeController(PictureService, FormService, $timeout) {
                    }, 3000);
                  }
                });
-    // Track the request and show its progress to the user.
-    // home.progress.addPromise($promise);
+
   };
 
 
-  home.homeImageUrl = '';
   home.getHomeImage = function () {
     PictureService.getHomeImage()
                   .then(function(response) {
