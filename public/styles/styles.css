@@ -20,7 +20,7 @@ p {
   border-left: 1px solid #eceff1;
   border-right: 1px solid #eceff1;
 }
-ul {
+ul.nav {
   padding-right: 100px;
 }
 main {
@@ -255,6 +255,48 @@ footer {
   float:left;
 }
 
+/* --- CSS for order.html --- */
+.order-heading {
+  text-align: center;
+}
+.contact-box {
+  text-align: justify;
+}
+table, th, tr, td {
+  border: 1px solid #222;
+}
+.prices {
+  width: 90%;
+  table-layout: fixed;
+  margin: 20px auto;
+  background-color: #263238;
+}
+th {
+  font-size: 18px;
+  border-bottom: 1px solid #263238;
+  padding-top: 10px;
+}
+th, thead > tr > td {
+  padding-left: 30px;
+}
+tbody > tr > td {
+  padding: 10px 0;
+}
+thead > tr > td, .fine-print {
+  font-size: 12px;
+}
+tbody tr td {
+  text-align: center;
+}
+.disclosure {
+  margin: 0 auto;
+  width: 90%;
+}
+.process > li {
+  margin-top: 20px;
+  text-align: justify;
+  font-size: 1.1em;
+}
 
 /* --- CSS for aboutUs.html --- */
 .about-margee {
