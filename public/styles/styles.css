@@ -223,6 +223,11 @@ footer {
 .gallery {
   text-align: center;
 }
+.gallery-description {
+  width: 60%;
+  text-align: justify;
+  margin: 10px auto;
+}
 .galleryItem {
   overflow: hidden;
   height: 20rem;
@@ -254,6 +259,9 @@ footer {
 /* --- CSS for aboutUs.html --- */
 .about-margee {
   padding: 20px;
+}
+.margee-pic {
+  width: 100%;
 }
 .faq-heading {
   text-align: center;
