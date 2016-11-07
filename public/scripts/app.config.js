@@ -10,6 +10,7 @@ angular.module('blankApp')
            controller: 'GalleryController as gallery',
          }).when('/products', {
            templateUrl: 'views/products.html',
+           controller: 'ProductsController as products',
          }).when('/order', {
            templateUrl: 'views/order.html',
          }).when('/aboutUs', {

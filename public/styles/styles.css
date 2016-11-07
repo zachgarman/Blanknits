@@ -254,6 +254,18 @@ footer {
   margin: 20px;
   float:left;
 }
+.colors {
+  text-align: center;
+}
+.yarn-images {
+  display: inline-block;
+  font-size: 14px;
+  height: 260px
+}
+.yarn-images > img {
+  width: 100px;
+  height: 135px;
+}
 
 /* --- CSS for order.html --- */
 .order-heading {

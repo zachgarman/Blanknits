@@ -60,8 +60,12 @@
     <h2>Color Selection</h2>
   </div>
 
-
-
-
+  <div class="colors">
+    <div class="col-xs-4 col-md-3 col-lg-2 yarn-images" ng-repeat="yarn in products.yarns">
+      <a target="_blank" href="{{yarn.url}}"><img ng-src="{{yarn.url}}" alt="yarn image" /></a>
+      <p>{{yarn.name}}</p>
+      <p>Code:  {{yarn.code}}</p>
+    </div>
+  </div>
 
 </div>

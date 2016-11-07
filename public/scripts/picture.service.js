@@ -2,9 +2,9 @@ angular.module('blankApp')
        .service('PictureService', PictureService);
 
 function PictureService($http) {
-  // Send request to server to get all pics from S3.
+  // Send request to server to get all stork blankets from S3.
   this.getPics = function() {
-    return $http.get('/blankGallery')
+    return $http.get('/blankGallery/blanknits-images')
       .then(function(urls) {
         return urls.data;
       });
@@ -18,4 +18,12 @@ function PictureService($http) {
         return response.data.url;
       });
   };
+
+  // Send request to server for all yarn images form S3.
+  this.getYarns = function() {
+    return $http.get('/blankGallery/blanknits-yarns')
+      .then(function(yarns) {
+        return yarns.data;
+      });
+  }
 }

@@ -11,7 +11,7 @@ function GalleryController(PictureService) {
       PictureService.getPics()
                     .then(function(response) {
                       gallery.allPics = response;
-                    });
+                      });
   };
 
   if (gallery.allPics.length == 0) {
