@@ -1,8 +1,7 @@
 const router = require('express').Router();
-// const pg = require('pg');
 const AWS = require('aws-sdk');
 
-// AWS.config.loadFromPath('./config.json');
+AWS.config.loadFromPath('./config.json');
 
 var s3 = new AWS.S3();
 
@@ -13,6 +12,7 @@ router.get('/home', function(req, res) {
   s3.listObjects(params, function(err, data) {
     if (err) {
       console.log('Error querying S3', err);
+      res.sendStatus(500);
     } else {
       var bucketContents = data.Contents;
       console.log(data.Contents);
@@ -37,6 +37,7 @@ router.get('/', function(req, res) {
   s3.listObjects(params, function(err, data) {
     if (err) {
       console.log('Error querying S3', err);
+      res.sendStatus(500);
     } else {
       var bucketContents = data.Contents;
       console.log(data.Contents);
