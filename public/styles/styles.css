@@ -128,7 +128,7 @@ footer {
 
 /* --- CSS for home.html --- */
 
-.row {
+.view {
   margin-top: 30px;
 }
 #home-image {
@@ -265,6 +265,8 @@ footer {
 .yarn-images > a > img {
   width: 100px;
   height: 135px;
+  margin-bottom: 7px;
+  margin-top: 10px;
 }
 
 /* --- CSS for order.html --- */
@@ -312,6 +314,57 @@ tbody tr td {
   margin-top: 20px;
   text-align: justify;
   font-size: 1.1em;
+}
+.shopping-cart {
+  background-color: #263238;
+  border: 1px solid #222;
+  padding: 5px 30px;
+  margin-top: 30px;
+}
+.order-form {
+  margin-bottom: 40px;
+}
+.order-group > select {
+  color: #263238;
+  display: block;
+  width: 180px;
+}
+.order-group  {
+  margin: 15px 0;
+  padding: 10px;
+  display: block;
+}
+.order-group > label {
+  font-size: 18px;
+}
+.color1-display, .color2-display {
+  position: absolute;
+  right: 15%;
+}
+.color1, .color2 {
+  height: 150px;
+  width: 110px;
+}
+.color1-display, .color2-display {
+  width: 140px;
+}
+.color1-display {
+  top: 95px;
+}
+.color2-display {
+  top: 295px;
+}
+.comments {
+  display: block;
+  color: #263238;
+  height: 80px;
+  width: 100%;
+}
+.paypal {
+  text-align: center;
+}
+.order-control:disabled {
+  background-color: gray;
 }
 
 /* --- CSS for aboutUs.html --- */

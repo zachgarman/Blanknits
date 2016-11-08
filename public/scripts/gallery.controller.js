@@ -11,7 +11,6 @@ function GalleryController(PictureService) {
       PictureService.getPics()
                     .then(function(response) {
                       gallery.allPics = response;
-                      console.log(response);
                       });
   };
 

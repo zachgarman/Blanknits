@@ -13,6 +13,7 @@ angular.module('blankApp')
            controller: 'ProductsController as products',
          }).when('/order', {
            templateUrl: 'views/order.html',
+           controller: 'OrderController as order',
          }).when('/aboutUs', {
            templateUrl: 'views/aboutUs.html',
          }).otherwise({

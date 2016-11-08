@@ -12,7 +12,6 @@ function ProductsController (PictureService) {
     PictureService.getYarns()
                   .then(function(response) {
                     products.yarns = response;
-                    console.log('response', response);
                   });
   };
 

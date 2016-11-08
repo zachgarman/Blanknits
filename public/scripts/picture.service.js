@@ -6,7 +6,7 @@ function PictureService($http) {
   this.getPics = function() {
     return $http.get('/blankGallery/blanknits-images')
       .then(function(urls) {
-        var responseObject = {
+        responseObject = {
           babyName: [],
           babyMisc: [],
           babyQuilt: [],
