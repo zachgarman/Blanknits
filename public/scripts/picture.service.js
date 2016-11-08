@@ -6,7 +6,21 @@ function PictureService($http) {
   this.getPics = function() {
     return $http.get('/blankGallery/blanknits-images')
       .then(function(urls) {
-        return urls.data;
+        var responseObject = {
+          babyName: [],
+          babyMisc: [],
+          babyQuilt: [],
+          assorted: [],
+          lamb: [],
+          logo: [],
+          momento: [],
+          symbol: [],
+        };
+        urls.data.forEach(function(image) {
+          var innerKey = image.code;
+          responseObject[innerKey].push(image.url);
+        });
+        return responseObject;
       });
   };
 

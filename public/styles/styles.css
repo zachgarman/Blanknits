@@ -262,7 +262,7 @@ footer {
   font-size: 14px;
   height: 260px
 }
-.yarn-images > img {
+.yarn-images > a > img {
   width: 100px;
   height: 135px;
 }
