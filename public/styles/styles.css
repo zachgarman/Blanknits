@@ -291,11 +291,15 @@ th {
 th, thead > tr > td {
   padding-left: 30px;
 }
-tbody > tr > td {
-  padding: 10px 0;
-}
 thead > tr > td, .fine-print {
   font-size: 12px;
+}
+tbody > tr > td > span {
+  font-size: 12px;
+  display: block;
+}
+tbody > tr > td {
+  padding: 10px 0;
 }
 tbody tr td {
   text-align: center;
@@ -323,4 +327,13 @@ tbody tr td {
 .faq {
   text-align: justify;
   background-color: #263238;
+}
+.design-example {
+  text-align: center;
+  font-size: 12px;
+}
+.design {
+  height: 400px;
+  width: 250px;
+  margin: 10px;
 }
