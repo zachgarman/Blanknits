@@ -13,12 +13,21 @@ function OrderController(PictureService) {
   };
 
   // Used to track order and send summary to Owner.
-  order.summarize = function() {
+  order.submit = function(form) {
+    // Trigger validation flag.
+    order.submitted = true;
+    // If form is invalid, return and show validation errors.
+    if (form.$invalid) {
+      console.log(form.$invalid);
+      return;
+    }
+
     order.summary = {
       type: order.type,
       size: order.size,
-      color1: order.color1.name,
-      color2: order.color2.name,
+      color1: order.color1.name || 'N/A',
+      color2: order.color2.name || 'N/A',
+      giftee: order.giftInfo || 'Not Provided',
       comments: order.comments
     }
     console.log('summarize: ', order.summary);
