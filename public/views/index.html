@@ -33,16 +33,23 @@
             <a class="logo" href="/home"><img src="https://s3-us-west-2.amazonaws.com/blanknits-logos/Main-Logo.png" alt="Blanknits logo" /></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <!-- Add class="collapse" to above div to make navbar disappear when small -->
             <ul class="nav navbar-nav navbar-right">
               <li><a href="/home">Home</a></li>
-              <li ng-click="nav.showProductLinks()" id="productDropdown" tw-click-outside="nav.showProductLinks()" ignore-if="nav.showProductDropdown==false">Products</li>
+              <li ng-click="nav.showProductLinks()" id="productDropdown" tw-click-outside="nav.showProductLinks()" ignore-if="nav.showProductDropdown==false">Products <div class="arrow-down"></div></li>
               <div ng-show="nav.showProductDropdown" class="product-dropdown">
-                <a href="/materials">Materials</a>
-                <a href="/colors">Colors</a>
+                <a href="/products/materials">Materials</a>
+                <a href="/products/colors">Colors</a>
               </div>
 
-              <li><a href="/gallery">Gallery</a></li>
+              <li ng-click="nav.showGalleryLinks()" id="galleryDropdown" tw-click-outside="nav.showGalleryLinks()" ignore-if="nav.showGalleryDropdown==false">Gallery <div class="arrow-down"></div></li>
+              <div ng-show="nav.showGalleryDropdown" class="gallery-dropdown">
+                <a href="/gallery/babyName">Baby Name Blanknits</a>
+                <a href="/gallery/customized">Customized Blanknits</a>
+                <a href="/gallery/momento">Momento Blanknits</a>
+                <a href="/gallery/symbol">Symbol Blanknits</a>
+                <a href="/gallery/logo">Logo Blanknits</a>
+                <a href="/gallery/lamb">Lamb Blanknits</a>
+              </div>
               <li><a href="/order">Order</a></li>
               <li><a href="/aboutUs">About Us</a></li>
             </ul>
@@ -54,7 +61,12 @@
               <a ng-click="nav.showDropdown()" href="/home">Home</a>
               <a ng-click="nav.showDropdown()" href="/materials">Materials</a>
               <a ng-click="nav.showDropdown()" href="/colors">Colors</a>
-              <a ng-click="nav.showDropdown()" href="/gallery">Gallery</a>
+              <a ng-click="nav.showDropdown()" href="/gallery/babyName">Baby Name Blanknits</a>
+              <a ng-click="nav.showDropdown()" href="/gallery/customized">Customized Blanknits</a>
+              <a ng-click="nav.showDropdown()" href="/gallery/momento">Momento Blanknits</a>
+              <a ng-click="nav.showDropdown()" href="/gallery/symbol">Symbol Blanknits</a>
+              <a ng-click="nav.showDropdown()" href="/gallery/logo">Logo Blanknits</a>
+              <a ng-click="nav.showDropdown()" href="/gallery/lamb">Lamb Blanknits</a>
               <a ng-click="nav.showDropdown()" href="/order">Order</a>
               <a ng-click="nav.showDropdown()" href="/aboutUs">About Us</a>
             </div>

@@ -33,13 +33,27 @@ main {
 .navbar-header {
   height: 0;
 }
-#productDropdown {
+#productDropdown, #galleryDropdown {
   padding: 15px;
   color: #9d9d9d;
   cursor: pointer;
 }
-#productDropdown:hover {
+#productDropdown:hover, #galleryDropdown:hover {
   color: #eceff1;
+}
+#productDropdown:hover .arrow-down, #galleryDropdown:hover .arrow-down {
+  border-top-color: #eceff1;
+}
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid gray;
+  position: absolute;
+  top: 24px;
+  margin-left:3px;
+  display:inline;
 }
 .dropdownButton, .dropdownButton:focus  {
   box-shadow: 0;
@@ -61,8 +75,8 @@ main {
 .dropdown-content {
   background-color: #222;
   position: absolute;
-  min-width: 130px;
-  margin-left: -30px;
+  min-width: 180px;
+  margin-left: -80px;
 }
 .product-dropdown {
   position: absolute;
@@ -71,7 +85,14 @@ main {
   width: 160px;
   background-color: #222;
 }
-.dropdown-content a, .product-dropdown a {
+.gallery-dropdown {
+  position: absolute;
+  top: 50px;
+  margin-left: 100px;
+  width: 160px;
+  background-color: #222;
+}
+.dropdown-content a, .product-dropdown a, .gallery-dropdown a {
   color: #9d9d9d;
   padding: 12px 16px;
   text-decoration: none;
@@ -81,7 +102,7 @@ main {
 .dropdown-content a:first-child {
   border-top: 1px solid gray;
 }
-.dropdown-content a:hover, .product-dropdown a:hover {
+.dropdown-content a:hover, .product-dropdown a:hover, .gallery-dropdown a:hover{
   color: #eceff1;
   border-top: 1px solid #eceff1;
   border-bottom: 1px solid #eceff1;
@@ -99,7 +120,7 @@ main {
         float: right;
         margin-right: 8%;
         margin-top: 10px;
-        font-size: 20px;
+        font-size: 14px;
     }
     .navbar-left,.navbar-right {
         float: none !important;
@@ -126,8 +147,8 @@ main {
         float: none;
     }
     .navbar-nav > li > a {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 7px;
+        padding-bottom: 7px;
     }
     .collapse.in{
         display:block !important;
@@ -248,12 +269,41 @@ footer {
 }
 .galleryItem {
   overflow: hidden;
-  height: 20rem;
+  width: 260px;
+  height: 260px;
+  display: inline-block;
+  margin: 20px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 .galleryPic {
   min-width: 100%;
+  min-height: 100%;
   overflow: hidden;
-  margin-top: 20px;
+  position: relative;
+  border: 1px solid #37474f;
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+div.larger-image {
+  overflow: visible;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+img.larger-image {
+  z-index: 1;
+  min-width: 400px;
+  min-height: 400px;
+  position: relative;
+  border: 1px solid black;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
 }
 
 /* --- CSS for materials.html --- */
@@ -279,6 +329,9 @@ footer {
 
 /* --- CSS for colors.html --- */
 
+.colors-heading {
+  text-align: center;
+}
 .colors {
   text-align: center;
 }

@@ -1,0 +1,21 @@
+<div class="container gallery">
+  <div class="row">
+    <h2>Blanknits Gallery</h2>
+    <p class="gallery-description">
+      Here are just a few of blankets we have designed.  We are constantly looking
+      for new and fun designs to make.  Maybe your blanket will be the next one
+      added to our gallery!
+    </p>
+  </div>
+
+  <div class="row">
+    <h3>Customized Baby Blanknits</h3>
+    <div class="galleryItem" ng-class="gallery.sizeClass[$index]" ng-repeat="picture in gallery.allPics.babyMisc">
+      <img ng-click="gallery.setClass($index)" tw-click-outside="gallery.sizeClass[$index]=''"
+        ignore-if="gallery.sizeClass[$index]=''" ng-init="gallery.sizeClass[$index]=''"
+        ng-class="gallery.sizeClass[$index]" ng-src="{{picture}}"
+        class="galleryPic img-responsive" alt="Blanknits image" ng-src="{{picture}}" />
+    </div>
+  </div>
+  
+</div>

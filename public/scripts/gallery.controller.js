@@ -17,4 +17,13 @@ function GalleryController(PictureService) {
   if (gallery.allPics.length == 0) {
     gallery.loadPics();
   }
+
+  gallery.setClass = function(index) {
+    if (gallery.sizeClass[index] == 'larger-image') {
+      gallery.sizeClass[index] = '';
+    } else {
+      gallery.sizeClass[index] = 'larger-image';
+    }
+  };
+
 }

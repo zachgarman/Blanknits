@@ -15,6 +15,7 @@ function PictureService($http) {
           logo: [],
           momento: [],
           symbol: [],
+          misc: [],
         };
         urls.data.forEach(function(image) {
           var innerKey = image.code;
