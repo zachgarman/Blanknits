@@ -8,9 +8,11 @@ angular.module('blankApp')
          }).when('/gallery', {
            templateUrl: 'views/gallery.html',
            controller: 'GalleryController as gallery',
-         }).when('/products', {
-           templateUrl: 'views/products.html',
-           controller: 'ProductsController as products',
+         }).when('/materials', {
+           templateUrl: 'views/materials.html',
+         }).when('/colors', {
+           templateUrl: 'views/colors.html',
+           controller: 'ColorsController as colors',
          }).when('/order', {
            templateUrl: 'views/order.html',
            controller: 'OrderController as order',

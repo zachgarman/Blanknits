@@ -6,10 +6,15 @@ function NavController() {
 
   var nav = this;
 
-  nav.show = false;
+  nav.showMenu = false;
+  nav.showProductDropdown = false;
 
   nav.showDropdown = function() {
-    nav.show = !nav.show;
+    nav.showMenu = !nav.showMenu;
+  };
+
+  nav.showProductLinks = function() {
+    nav.showProductDropdown = !nav.showProductDropdown;
   };
 
 }
