@@ -4,9 +4,11 @@
   </div>
 
   <div class="colors">
-    <div class="col-xs-4 col-md-3 col-lg-2 yarn-images" ng-repeat="yarn in colors.yarns">
-      <a target="_blank" href="{{yarn.url}}"><img ng-src="{{yarn.url}}" alt="yarn image" /></a>
-      <p>{{yarn.name}}</p>
+    <div class="col-xs-4 col-sm-3 col-md-2 yarn-images" ng-repeat="yarn in colors.yarns" >
+      <img ng-click="colors.setClass($index)" tw-click-outside="colors.sizeClass[$index]=''"
+        ignore-if="colors.sizeClass[$index]=''" ng-init="colors.sizeClass[$index]=''"
+        ng-class="colors.sizeClass[$index]" ng-src="{{yarn.url}}" alt="yarn image" />
+      <p class="yarn-name" ng-class="colors.sizeClass[$index]">{{yarn.name}}</p>
     </div>
   </div>
 </div>

@@ -7,7 +7,7 @@ function ColorsController (PictureService) {
   var colors = this;
   colors.yarns = [];
 
-  // S3 call to get all colors images
+  // S3 call to get all colors image
   colors.getYarns = function() {
     PictureService.getYarns()
                   .then(function(response) {
@@ -19,4 +19,11 @@ function ColorsController (PictureService) {
     colors.getYarns();
   }
 
+  colors.setClass = function(index) {
+    if (colors.sizeClass[index] == 'enlarge') {
+      colors.sizeClass[index] = '';
+    } else {
+      colors.sizeClass[index] = 'enlarge';
+    }
+  };
 }

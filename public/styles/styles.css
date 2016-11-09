@@ -256,7 +256,8 @@ footer {
   margin-top: 20px;
 }
 
-/* --- CSS for products.html --- */
+/* --- CSS for materials.html --- */
+
 .product-top {
   margin-top: 20px;
 }
@@ -275,22 +276,60 @@ footer {
   margin: 20px 20px 20px 0;
   float:left;
 }
+
+/* --- CSS for colors.html --- */
+
 .colors {
   text-align: center;
 }
 .yarn-images {
   display: inline-block;
+  text-align: center;
   font-size: 14px;
-  height: 260px
+  height: 200px;
 }
-.yarn-images > a > img {
+.yarn-images img {
   width: 100px;
   height: 135px;
-  margin-bottom: 7px;
-  margin-top: 10px;
+  margin: 10px 0 7px 0;
+  overflow: hidden;
+  position: relative;
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+.yarn-name {
+  width: 135px;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  margin: auto;
+  border: 1px solid #37474f;
+}
+img.enlarge {
+  width: 200px;
+  height: 270px;
+}
+.yarn-images .enlarge {
+  z-index: 1;
+  position: relative;
+  border: 1px solid black;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
+}
+p.enlarge {
+  background-color: black;
+  width: 200px;
+  margin-top: -10px;
+  padding: 5px;
 }
 
 /* --- CSS for order.html --- */
+
 .order-heading {
   text-align: center;
 }
