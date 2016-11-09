@@ -40,7 +40,6 @@
                 <a href="/products/materials">Materials</a>
                 <a href="/products/colors">Colors</a>
               </div>
-
               <li ng-click="nav.showGalleryLinks()" id="galleryDropdown" tw-click-outside="nav.showGalleryLinks()" ignore-if="nav.showGalleryDropdown==false">Gallery <div class="arrow-down"></div></li>
               <div ng-show="nav.showGalleryDropdown" class="gallery-dropdown">
                 <a href="/gallery/babyName">Baby Name Blanknits</a>
@@ -59,8 +58,8 @@
             <button ng-click="nav.showDropdown()" class="dropdownButton btn">Menu</button>
             <div ng-show="nav.showMenu" id="dropdown" class="dropdown-content">
               <a ng-click="nav.showDropdown()" href="/home">Home</a>
-              <a ng-click="nav.showDropdown()" href="/materials">Materials</a>
-              <a ng-click="nav.showDropdown()" href="/colors">Colors</a>
+              <a ng-click="nav.showDropdown()" href="/products/materials">Materials</a>
+              <a ng-click="nav.showDropdown()" href="/products/colors">Colors</a>
               <a ng-click="nav.showDropdown()" href="/gallery/babyName">Baby Name Blanknits</a>
               <a ng-click="nav.showDropdown()" href="/gallery/customized">Customized Blanknits</a>
               <a ng-click="nav.showDropdown()" href="/gallery/momento">Momento Blanknits</a>
