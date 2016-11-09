@@ -263,9 +263,74 @@ footer {
   text-align: center;
 }
 .gallery-description {
-  width: 60%;
+  width: 90%;
   text-align: justify;
   margin: 10px auto;
+}
+.gallery-nav h3 {
+  display: inline;
+}
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid gray;
+  border-top: 5px solid transparent;
+  position: absolute;
+  margin-top: 12px;
+  left: 5px;
+  display: inline;
+  transition: all .4s ease;
+}
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-left: 5px solid gray;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+  position: absolute;
+  margin-top: 12px;
+  right: 5px;
+  display: inline;
+  transition: all .4s ease;
+}
+.gallery-nav-link {
+  background-color: #222;
+  position:relative;
+  border: 1px solid gray;
+  display: inline;
+  margin: 0 20px;
+  transition: all .4s ease;
+}
+.left-link {
+  padding: 3px 3px 3px 15px;
+}
+.right-link {
+  padding: 3px 15px 3px 5px;
+}
+.gallery-nav a {
+  display:inline;
+  color: gray;
+  transition: all .4s ease;
+}
+.gallery-nav-link:hover a {
+  color: #eceff1;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all .4s ease;
+}
+.gallery-nav-link:hover {
+  border: 1px solid #eceff1;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.gallery-nav-link:hover .arrow-left {
+  border-right-color: #eceff1;
+  transition: all .4s ease;
+}
+.gallery-nav-link:hover .arrow-right {
+  border-left-color: #eceff1;
+  transition: all .4s ease;
 }
 .galleryItem {
   overflow: hidden;
