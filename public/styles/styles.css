@@ -299,6 +299,9 @@ footer {
   text-align: justify;
   margin: 10px auto;
 }
+.gallery-nav {
+  margin: 10px 0;
+}
 .gallery-nav h3 {
   display: inline;
 }
@@ -309,7 +312,7 @@ footer {
   border-right: 5px solid gray;
   border-top: 5px solid transparent;
   position: absolute;
-  margin-top: 12px;
+  margin-top: 5px;
   left: 5px;
   display: inline;
   transition: all .4s ease;
@@ -321,7 +324,7 @@ footer {
   border-bottom: 5px solid transparent;
   border-top: 5px solid transparent;
   position: absolute;
-  margin-top: 12px;
+  margin-top: 5px;
   right: 5px;
   display: inline;
   transition: all .4s ease;
@@ -358,10 +361,12 @@ footer {
 }
 .gallery-nav-link:hover .arrow-left {
   border-right-color: #eceff1;
+  margin-top: 6px;
   transition: all .4s ease;
 }
 .gallery-nav-link:hover .arrow-right {
   border-left-color: #eceff1;
+  margin-top: 6px;
   transition: all .4s ease;
 }
 .galleryItem {
