@@ -391,6 +391,10 @@ img.larger-image {
   margin: 20px 20px 20px 0;
   float:left;
 }
+.link:hover {
+  color: yellow;
+}
+
 
 /* --- CSS for colors.html --- */
 
@@ -453,6 +457,9 @@ p.enlarge {
 }
 .contact-box {
   text-align: justify;
+}
+.order-link:hover {
+  color: yellow;
 }
 table, th, tr, td {
   border: 1px solid #222;
@@ -551,6 +558,9 @@ tbody tr td {
 /* --- CSS for aboutUs.html --- */
 .about-margee {
   padding: 20px;
+}
+.about-link:hover {
+  color: yellow;
 }
 .margee-pic {
   width: 100%;

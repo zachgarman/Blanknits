@@ -8,8 +8,19 @@
     </p>
   </div>
 
-  <div class="row">
-    <h3>Customized Baby Blanknits</h3>
+  <div class="row gallery">
+    <div class="row gallery-nav">
+      <div class="gallery-nav-link">
+        <div class="arrow-left"></div>
+        <a class="left-link" href="/gallery/babyName">View Previous Gallery</a>
+      </div>
+      <h3>Customized Baby Blanknits</h3>
+      <div class="gallery-nav-link">
+        <a class="right-link" href="/gallery/momento">View Next Gallery</a>
+        <div class="arrow-right"></div>
+      </div>
+    </div>
+
     <div class="galleryItem" ng-class="gallery.sizeClass[$index]" ng-repeat="picture in gallery.allPics.babyMisc">
       <img ng-click="gallery.setClass($index)" tw-click-outside="gallery.sizeClass[$index]=''"
         ignore-if="gallery.sizeClass[$index]=''" ng-init="gallery.sizeClass[$index]=''"
@@ -17,5 +28,5 @@
         class="galleryPic img-responsive" alt="Blanknits image" ng-src="{{picture}}" />
     </div>
   </div>
-  
+
 </div>
