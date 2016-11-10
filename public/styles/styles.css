@@ -467,7 +467,7 @@ img.enlarge {
   width: 200px;
   height: 270px;
 }
-.yarn-images .enlarge {
+.yarn-images .enlarge, .display .enlarge {
   z-index: 1;
   position: relative;
   border: 1px solid black;
@@ -482,6 +482,8 @@ p.enlarge {
   width: 200px;
   margin-top: -10px;
   padding: 5px;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
 }
 .display-wool {
   text-align: center;
@@ -552,28 +554,37 @@ tbody tr td {
   width: 160px;
 }
 .order-group  {
-  margin: 15px 0;
   padding: 10px;
-  display: block;
+  padding-left: 5%;
 }
 .order-group > label {
   font-size: 18px;
 }
+.space {
+  margin-top: 200px;
+}
 .color1, .color2 {
   height: 150px;
   width: 110px;
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
-.color1-display, .color2-display {
+.display {
   width: 140px;
   text-align: center;
   position: absolute;
-  right: 10%;
+  bottom: 100px;
+  left: 35px;
 }
-.color1-display {
-  top: 95px;
-}
-.color2-display {
-  top: 295px;
+.yarn-label {
+  width: 135px;
+  margin: auto;
+  border: 1px solid #263238;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 .comments {
   display: block;
@@ -581,9 +592,27 @@ tbody tr td {
   height: 80px;
   width: 100%;
 }
-.giftee {
+.input-element {
   color: #263238;
   display: block;
+}
+.no-show-tax {
+  color: #263238;
+  -webkit-transition: all 0.25s ease;
+  transition: all .25s ease;
+}
+.show-tax {
+  color: #eceff1;
+  -webkit-transition: all 0.25s ease;
+  transition: all .25s ease;
+}
+.order-total {
+  text-align: center;
+  background-color: #222;
+  width: 320px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #eceff1;
 }
 .paypal {
   text-align: center;

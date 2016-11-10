@@ -85,7 +85,7 @@
       <div class="row disclosure">
         <p class="fine-print">
           **All orders ship for free in the continental United States.  If the
-          order is being shiped to a location in Arizona, we will have to add
+          order is being shipped to a location in Arizona, we will have to add
           6.70% for tax purposes.
         </p>
       </div>
@@ -108,7 +108,8 @@
           Indicate any design elements you would like incorporated (i.e. if
           this is for a baby shower or child's birthday, please include the
           name of the person on the Blanknit).  You can also reference any of
-          the Blanknits from our <a class="order-link" href="/gallery/babyName">Gallery.</a>
+          the Blanknits designs from our <a class="order-link"
+          href="/gallery/babyName">Gallery.</a>
         </li>
         <li>
           Our Lamb Blanknits come in a gradient of colors that are hand-dyed to
@@ -146,69 +147,112 @@
       <div class="row">
         <h1 class="order-group">Order a Blanknit Today!</h1>
         <form class="order-form" name="orderForm" novalidate role="form" >
-          <div class="order-group">
-            <label for="type">Blanknit Type: </label>
-            <span class="label label-danger" data-ng-show="order.submitted && orderForm.type.$error.required">Required!</span>
-            <select name="type" ng-change="order.resetColors()" data-ng-model="order.type" class="order-control" required>
-              <option disabled></option>
-              <option value="stork">Stork Blanknit</option>
-              <option value="lamb">Lamb Blanknit</option>
-            </select>
+
+          <div class="row">
+              <div class="col-xs-6 order-group">
+                <label for="type">Blanknit Type: </label>
+                <span class="label label-danger" data-ng-show="order.submitted && orderForm.type.$error.required">Required!</span>
+                <select name="type" ng-change="order.resetColors()" data-ng-model="order.type" class="order-control" required>
+                  <option disabled></option>
+                  <option value="stork">Stork Blanknit</option>
+                  <option value="lamb">Lamb Blanknit</option>
+                </select>
+              </div>
+
+              <div class="col-xs-6 order-group">
+                <label for="size">Blanknit Size: </label>
+                <span class="label label-danger" data-ng-show="order.submitted && orderForm.size.$error.required">Required!</span>
+                <select name="size" data-ng-model="order.size" class="order-control" required>
+                  <option disabled></option>
+                  <option value="extra-small">Extra Small <span>(car-seat)</span></option>
+                  <option value="small">Small <span>(crib-size)</span></option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>
+                </select>
+              </div>
           </div>
 
-          <div class="order-group">
-            <label for="size">Blanknit Size: </label>
-            <span class="label label-danger" data-ng-show="order.submitted && orderForm.size.$error.required">Required!</span>
-            <select name="size" data-ng-model="order.size" class="order-control" required>
-              <option disabled></option>
-              <option value="extra-small">Extra Small <span>(car-seat)</span></option>
-              <option value="small">Small <span>(crib-size)</span></option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-            </select>
+          <div class="row" ng-class="order.showColorSelection">
+            <div class="col-xs-6 order-group">
+              <label for="color1">Color 1: </label>
+              <span class="label label-danger" data-ng-show="order.submitted && orderForm.color1.$error.required && order.type != 'lamb'">Required!</span>
+              <select name="color1" ng-disabled="order.type!='stork'" ng-change="order.parseJSON(1)" data-ng-model="order.selection1" class="order-control" ng-required="order.type == 'stork'">
+                <option disabled></option>
+                <option ng-repeat="yarn in order.yarns" class="selection"
+                        value="{{yarn}}">{{yarn.name}}</option>
+              </select>
+              <div ng-show="order.color1" class="color1 display">
+                <img ng-click="order.setYarnClass(1)" tw-click-outside="order.sizeYarnClass[1]=''"
+                  ignore-if="order.sizeYarnClass[1]=''" ng-init="order.sizeYarnClass[1]=''"
+                  ng-class="order.sizeYarnClass[1]" class="color1" ng-src="{{order.color1.url}}"
+                  alt="Color 1 selection" />
+                <p class="yarn-label" ng-class="order.sizeYarnClass[1]">{{order.color1.name}}</p>
+              </div>
+            </div>
+
+            <div class="col-xs-6 order-group">
+              <label for="color2">Color 2: </label>
+              <span class="label label-danger" data-ng-show="order.submitted && orderForm.color2.$error.required && order.type != 'lamb'">Required!</span>
+              <select name="color2" ng-disabled="order.type!='stork'" ng-change="order.parseJSON(2)" data-ng-model="order.selection2" class="order-control" ng-required="order.type == 'stork'">
+                <option disabled></option>
+                <option ng-repeat="yarn in order.yarns" class="selection"
+                        value="{{yarn}}">{{yarn.name}}</option>
+              </select>
+              <div ng-show="order.color2" class="color2 display">
+                <img ng-click="order.setYarnClass(2)" tw-click-outside="order.sizeYarnClass[2]=''"
+                  ignore-if="order.sizeYarnClass[2]=''" ng-init="order.sizeYarnClass[2]=''"
+                  ng-class="order.sizeYarnClass[2]" class="color2" ng-src="{{order.color2.url}}"
+                  alt="Color 2 selection" />
+                <p class="yarn-label" ng-class="order.sizeYarnClass[2]">{{order.color2.name}}</p>
+              </div>
+            </div>
           </div>
 
-          <div class="order-group">
-            <label for="color1">Color 1: </label>
-            <span class="label label-danger" data-ng-show="order.submitted && orderForm.color1.$error.required && order.type != 'lamb'">Required!</span>
-            <select name="color1" ng-disabled="order.type == 'lamb'" ng-change="order.parseJSON(1)" data-ng-model="order.selection1" class="order-control" ng-required="order.type == 'stork'">
-              <option disabled></option>
-              <option ng-repeat="yarn in order.yarns" class="selection"
-                      value="{{yarn}}">{{yarn.name}}</option>
-            </select>
-            <div ng-show="order.color1" class="color1-display">
-              <img class="color1" ng-src="{{order.color1.url}}" alt="Color 1 selection" />
-              <p>{{order.color1.name}}</p>
+          <div class="row">
+            <div class="col-xs-6 order-group">
+              <label for="name">Your Name: </label>
+              <span class="label label-danger" data-ng-show="order.submitted && orderForm.name.$error.required">Required!</span>
+              <input name="name" type="text" data-ng-model="order.name" class="input-element" required/>
+            </div>
+
+            <div class="col-xs-6 order-group">
+              <label for="email">Email Address: </label>
+              <span class="label label-danger" data-ng-show="order.submitted && orderForm.email.$error.required">Required!</span>
+              <span class="label label-danger" data-ng-show="order.submitted && orderForm.$error.email">Invalid email!</span>
+              <input name="email" type="email" data-ng-model="order.email" class="input-element" required/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6 order-group">
+              <label for="gift">Is this a gift?: </label>
+              <input type="checkbox" name="gift" data-ng-model="order.gifted" value="gift" class="order-control"></input>
+              <div ng-show="order.gifted" class="gift-input">
+                <label for="gift-info">Please enter the giftee's name, if known. </label>
+                <input type="text" data-ng-model="order.giftInfo" class="order-control input-element" />
+              </div>
+            </div>
+
+            <div class="col-xs-6 order-group">
+              <label for="resident">AZ resident?: </label>
+              <input type="checkbox" name="resident" data-ng-model="order.resident" class="order-control" />
+              <p ng-class="order.tax()" class="fine-print">
+                **6.70% sales tax will be added to your order.
+              </p>
             </div>
           </div>
 
           <div class="order-group">
-            <label for="color2">Color 2: </label>
-            <span class="label label-danger" data-ng-show="order.submitted && orderForm.color2.$error.required && order.type != 'lamb'">Required!</span>
-            <select name="color2" ng-disabled="order.type == 'lamb'" ng-change="order.parseJSON(2)" data-ng-model="order.selection2" class="order-control" ng-required="order.type == 'stork'">
-              <option disabled></option>
-              <option ng-repeat="yarn in order.yarns" class="selection"
-                      value="{{yarn}}">{{yarn.name}}</option>
-            </select>
-            <div ng-show="order.color2" class="color2-display">
-              <img class="color2" ng-src="{{order.color2.url}}" alt="Color 2 selection" />
-              <p>{{order.color2.name}}</p>
-            </div>
-          </div>
-
-          <div class="order-group">
-            <label for="gift">Is this a gift?: </label>
-            <input type="checkbox" name="gift" data-ng-model="order.gifted" value="gift" class="order-control"></input>
-
-            <div ng-show="order.gifted" class="gift-input">
-              <label for="gift-info">Please enter the giftee's name, if known. </label>
-              <input type="text" data-ng-model="order.giftInfo" class="order-control giftee" />
-            </div>
+            <h2 class="order-total">Order Total:  {{order.total() | currency}}</h2>
           </div>
 
           <div class="order-group">
             <label for="comments">Comments: </label>
             <span class="label label-danger" data-ng-show="order.submitted && orderForm.comments.$error.required">Required!</span>
+            <p class="fine-print">
+              Please indicate some ideas for your design. You will be contacted
+              by Margee for further design consultation.
+            </p>
             <textarea name="comments" data-ng-model="order.comments" class="order-control comments" required></textarea>
           </div>
 
