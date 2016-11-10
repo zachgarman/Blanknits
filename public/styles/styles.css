@@ -92,12 +92,12 @@ main {
 .product-dropdown, .gallery-dropdown {
   position: absolute;
   top: 50px;
-  margin-left: 100px;
+  margin-left: -16px;
   width: 160px;
   background-color: #222;
 }
 .gallery-dropdown {
-  margin-left: 200px;
+  width: 180px;
 }
 .dropdown-content a, .product-dropdown a, .gallery-dropdown a,
 .products-side-menu p, .gallery-side-menu p {

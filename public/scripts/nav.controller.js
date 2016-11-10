@@ -13,18 +13,6 @@ function NavController() {
     nav.showMenu = !nav.showMenu;
   };
 
-  // JS for showing/hiding dropdown menu on Products li
-  nav.showProductDropdown = false;
-  nav.showProductLinks = function() {
-    nav.showProductDropdown = !nav.showProductDropdown;
-  };
-
-  // JS for showing/hiding dropdown menu on Gallery li
-  nav.showGalleryDropdown = false;
-  nav.showGalleryLinks = function() {
-    nav.showGalleryDropdown = !nav.showGalleryDropdown;
-  };
-
   // JS for showing/hiding sidebar menu for Products menu
   nav.showProductsSidebar = false;
   nav.showProductsMenu = function() {
@@ -37,4 +25,8 @@ function NavController() {
     nav.showGallerySidebar = !nav.showGallerySidebar;
   }
 
+  // JS for larger screens
+  // JS for hiding dropdown menu on Products & Gallery li initially
+  nav.showProductDropdown = false;
+  nav.showGalleryDropdown = false;
 }
