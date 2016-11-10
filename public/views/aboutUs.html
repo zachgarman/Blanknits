@@ -44,17 +44,19 @@
         revise the design up to two times with no additional charges.  Once we
         agree on a design, the Blanknit will be created and mailed promptly.
       </p>
-      <div class="design-example col-xs-6">
-        <a href="https://s3-us-west-2.amazonaws.com/blanknits-process/Gracelyn_design.jpg">
-          <img class="design" src="https://s3-us-west-2.amazonaws.com/blanknits-process/Gracelyn_design.jpg" alt="design example" />
-        </a>
-        <p>Example of a design preview.</p>
+      <div class="design-example col-sm-6 col-xs-12">
+        <img class="design" ng-click="about.setClass(1)" tw-click-outside="about.sizeClass[1]=''"
+          ignore-if="about.sizeClass[1]=''" ng-init="about.sizeClass[1]=''"
+          ng-class="about.sizeClass[1]" src="https://s3-us-west-2.amazonaws.com/blanknits-process/Gracelyn_design.jpg"
+          alt="design example" />
+        <p class="example-tag" ng-class="about.sizeClass[1]">Example of a design preview.</pclass>
       </div>
-      <div class="design-example col-xs-6">
-        <a href="https://s3-us-west-2.amazonaws.com/blanknits-process/Gracelyn_blanknit.JPG">
-          <img class="design" src="https://s3-us-west-2.amazonaws.com/blanknits-process/Gracelyn_blanknit.JPG" alt="finished Blanknit example" />
-        </a>
-        <p>Example of a finished Blanknit.</p>
+      <div class="design-example col-sm-6 col-xs-12">
+        <img class="design" ng-click="about.setClass(2)" tw-click-outside="about.sizeClass[2]=''"
+          ignore-if="about.sizeClass[2]=''" ng-init="about.sizeClass[2]=''"
+          ng-class="about.sizeClass[2]" src="https://s3-us-west-2.amazonaws.com/blanknits-process/Gracelyn_blanknit.JPG"
+          alt="finished Blanknit example" />
+        <p class="example-tag" ng-class="about.sizeClass[2]">Example of a finished Blanknit.</p>
       </div>
     </div>
   </div>
@@ -69,7 +71,7 @@
         from red to gold to green to blue. Just let us know if you would like
         more or less of each dye color on the finished Blanknit. Be sure to
         check out some of our <a class="about-link" href="/gallery/lamb">Lamb
-        Blanknits</a> in our gallery.
+        Blanknits</a> designs in our gallery.
       </p>
     </div>
   </div>
@@ -144,10 +146,11 @@
         Blanknit with your card enclosed.
       </p>
       <div class="design-example col-xs-12 col-md-6 col-md-offset-3">
-        <a href="https://s3-us-west-2.amazonaws.com/blanknits-process/gift-postcard.png">
-          <img class="gift-img" src="https://s3-us-west-2.amazonaws.com/blanknits-process/gift-postcard.png" alt="finished Blanknit example" />
-        </a>
-        <p>Example of a gift postcard.</p>
+        <img class="gift-img" ng-click="about.setClass(3)" tw-click-outside="about.sizeClass[3]=''"
+          ignore-if="about.sizeClass[3]=''" ng-init="about.sizeClass[3]=''"
+          ng-class="about.sizeClass[3]" src="https://s3-us-west-2.amazonaws.com/blanknits-process/gift-postcard.png"
+          alt="Gift Postcard Example" />
+        <p class="example-tag" ng-class="about.sizeClass[3]">Example of a gift postcard.</p>
       </div>
     </div>
   </div>

@@ -33,6 +33,7 @@ angular.module('blankApp')
            controller: 'OrderController as order',
          }).when('/aboutUs', {
            templateUrl: 'views/aboutUs.html',
+           controller: 'AboutController as about',
          }).otherwise({
            redirectTo: '/home',
          });

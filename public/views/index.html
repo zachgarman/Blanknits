@@ -15,6 +15,7 @@
     <script src="/scripts/gallery.controller.js"></script>
     <script src="/scripts/colors.controller.js"></script>
     <script src="/scripts/order.controller.js"></script>
+    <script src="/scripts/about.controller.js"></script>
     <script src="/scripts/picture.service.js"></script>
     <script src="/scripts/form.service.js"></script>
 
@@ -58,14 +59,26 @@
             <button ng-click="nav.showDropdown()" class="dropdownButton btn">Menu</button>
             <div ng-show="nav.showMenu" id="dropdown" class="dropdown-content">
               <a ng-click="nav.showDropdown()" href="/home">Home</a>
-              <a ng-click="nav.showDropdown()" href="/products/materials">Materials</a>
-              <a ng-click="nav.showDropdown()" href="/products/colors">Colors</a>
-              <a ng-click="nav.showDropdown()" href="/gallery/babyName">Baby Name Blanknits</a>
-              <a ng-click="nav.showDropdown()" href="/gallery/customized">Customized Blanknits</a>
-              <a ng-click="nav.showDropdown()" href="/gallery/momento">Momento Blanknits</a>
-              <a ng-click="nav.showDropdown()" href="/gallery/symbol">Symbol Blanknits</a>
-              <a ng-click="nav.showDropdown()" href="/gallery/logo">Logo Blanknits</a>
-              <a ng-click="nav.showDropdown()" href="/gallery/lamb">Lamb Blanknits</a>
+              <div class="products-side-menu" ng-click="nav.showProductsMenu()" tw-click-outside="nav.showProductsMenu()" ignore-if="nav.showProductsSidebar==false">
+                <div class="menu-arrow-left"></div>
+                <p>Products</p>
+              </div>
+              <div class="products-menu" ng-show="nav.showProductsSidebar">
+                <a ng-click="nav.showDropdown()" href="/products/materials">Materials</a>
+                <a ng-click="nav.showDropdown()" href="/products/colors">Colors</a>
+              </div>
+              <div class="gallery-side-menu" ng-click="nav.showGalleryMenu()" tw-click-outside="nav.showGalleryMenu()" ignore-if="nav.showGallerySidebar==false">
+                <div class="menu-arrow-left"></div>
+                <p>Gallery</p>
+              </div>
+              <div class="gallery-menu" ng-show="nav.showGallerySidebar">
+                <a ng-click="nav.showDropdown()" href="/gallery/babyName">Baby Name Blanknits</a>
+                <a ng-click="nav.showDropdown()" href="/gallery/customized">Customized Blanknits</a>
+                <a ng-click="nav.showDropdown()" href="/gallery/momento">Momento Blanknits</a>
+                <a ng-click="nav.showDropdown()" href="/gallery/symbol">Symbol Blanknits</a>
+                <a ng-click="nav.showDropdown()" href="/gallery/logo">Logo Blanknits</a>
+                <a ng-click="nav.showDropdown()" href="/gallery/lamb">Lamb Blanknits</a>
+              </div>
               <a ng-click="nav.showDropdown()" href="/order">Order</a>
               <a ng-click="nav.showDropdown()" href="/aboutUs">About Us</a>
             </div>

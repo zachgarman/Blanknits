@@ -55,6 +55,17 @@ main {
   margin-left:3px;
   display:inline;
 }
+.menu-arrow-left {
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid gray;
+  border-top: 5px solid transparent;
+  position: absolute;
+  margin-top: 16px;
+  left: 5px;
+  display: inline;
+}
 .dropdownButton, .dropdownButton:focus  {
   box-shadow: 0;
   background-color: #222;
@@ -75,10 +86,10 @@ main {
 .dropdown-content {
   background-color: #222;
   position: absolute;
-  min-width: 180px;
-  margin-left: -80px;
+  min-width: 120px;
+  margin-left: -60px;
 }
-.product-dropdown {
+.product-dropdown, .gallery-dropdown {
   position: absolute;
   top: 50px;
   margin-left: 100px;
@@ -86,26 +97,47 @@ main {
   background-color: #222;
 }
 .gallery-dropdown {
-  position: absolute;
-  top: 50px;
-  margin-left: 100px;
-  width: 160px;
-  background-color: #222;
+  margin-left: 200px;
 }
-.dropdown-content a, .product-dropdown a, .gallery-dropdown a {
+.dropdown-content a, .product-dropdown a, .gallery-dropdown a,
+.products-side-menu p, .gallery-side-menu p {
   color: #9d9d9d;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   border-bottom: 1px solid gray;
+  font-size: 14px;
+  position: relative;
 }
-.dropdown-content a:first-child {
+.products-side-menu p, .gallery-side-menu p {
+  margin-bottom: 0;
+}
+.dropdown-content a:first-child, .gallery-dropdown a:first-child,
+.product-dropdown a:first-child {
   border-top: 1px solid gray;
 }
-.dropdown-content a:hover, .product-dropdown a:hover, .gallery-dropdown a:hover{
+.dropdown-content a:hover, .product-dropdown a:hover,
+.gallery-dropdown a:hover, .products-side-menu:hover p,
+.gallery-side-menu:hover p {
   color: #eceff1;
   border-top: 1px solid #eceff1;
   border-bottom: 1px solid #eceff1;
+}
+.products-side-menu:hover .menu-arrow-left, .gallery-side-menu:hover .menu-arrow-left {
+  border-right-color: #eceff1;
+}
+.gallery-menu, .products-menu {
+  position: absolute;
+  right: 120px;
+  background-color: #222;
+  border-right: 1px solid gray;
+}
+.gallery-menu {
+  width: 170px;
+  top: 90px;
+}
+.products-menu {
+  top: 45px;
 }
 .show {
   display:block;
@@ -581,7 +613,45 @@ tbody tr td {
   height: 400px;
   width: 250px;
   margin: 10px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.design:hover {
+  border: 1px solid #37474f;
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.design.enlarge-example {
+  height: 650px;
+  width: 410px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.enlarge-example:hover {
+  border: 1px solid #222;
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 .gift-img {
   width: 100%;
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.gift-img.enlarge-example {
+  width: 150%;
+  margin-left: -25%;
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
