@@ -4,17 +4,25 @@
     <p>(Click to Enlarge)</p>
   </div>
 
-  <div class="colors">
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 yarn-images" ng-repeat="yarn in colors.yarns" >
-      <img ng-click="colors.setClass($index)" tw-click-outside="colors.sizeClass[$index]=''"
-        ignore-if="colors.sizeClass[$index]=''" ng-init="colors.sizeClass[$index]=''"
-        ng-class="colors.sizeClass[$index]" ng-src="{{yarn.url}}" alt="yarn image" />
-      <p class="yarn-name" ng-class="colors.sizeClass[$index]">{{yarn.name}}</p>
+  <div class="row">
+    <div class="colors">
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 yarn-images" ng-repeat="yarn in colors.yarns" >
+        <img ng-click="colors.setYarnClass($index)" tw-click-outside="colors.sizeYarnClass[$index]=''"
+          ignore-if="colors.sizeYarnClass[$index]=''" ng-init="colors.sizeYarnClass[$index]=''"
+          ng-class="colors.sizeYarnClass[$index]" ng-src="{{yarn.url}}" alt="yarn image" />
+        <p class="yarn-name" ng-class="colors.sizeYarnClass[$index]">{{yarn.name}}</p>
+      </div>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row display-wool">
     <h2>90% Wool, 10% Nylon Yarn Colors</h2>
+    <div class="galleryItem" ng-class="colors.sizeClass[$index]" ng-repeat="picture in colors.allPics.lamb">
+    <img ng-click="colors.setClass($index)" tw-click-outside="colors.sizeClass[$index]=''"
+      ignore-if="colors.sizeClass[$index]=''" ng-init="colors.sizeClass[$index]=''"
+      ng-class="colors.sizeClass[$index]" ng-src="{{picture}}"
+      class="galleryPic img-responsive" alt="Blanknits image" ng-src="{{picture}}" />
+    </div>
 
   </div>
 

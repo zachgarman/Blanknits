@@ -19,11 +19,33 @@ function ColorsController (PictureService) {
     colors.getYarns();
   }
 
-  colors.setClass = function(index) {
-    if (colors.sizeClass[index] == 'enlarge') {
-      colors.sizeClass[index] = '';
+  colors.setYarnClass = function(index) {
+    if (colors.sizeYarnClass[index] == 'enlarge') {
+      colors.sizeYarnClass[index] = '';
     } else {
-      colors.sizeClass[index] = 'enlarge';
+      colors.sizeYarnClass[index] = 'enlarge';
     }
   };
+
+  colors.allPics = [];
+
+  colors.loadPics = function() {
+    PictureService.getPics()
+                  .then(function(response) {
+                    colors.allPics = response;
+                    });
+  };
+
+  if (colors.allPics.length == 0) {
+    colors.loadPics();
+  }
+
+  colors.setClass = function(index) {
+    if (colors.sizeClass[index] == 'larger-image') {
+      colors.sizeClass[index] = '';
+    } else {
+      colors.sizeClass[index] = 'larger-image';
+    }
+  };
+
 }

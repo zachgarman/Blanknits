@@ -483,6 +483,9 @@ p.enlarge {
   margin-top: -10px;
   padding: 5px;
 }
+.display-wool {
+  text-align: center;
+}
 
 /* --- CSS for order.html --- */
 
