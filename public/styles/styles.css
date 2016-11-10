@@ -315,7 +315,6 @@ footer {
   margin-top: 5px;
   left: 5px;
   display: inline;
-  transition: all .4s ease;
 }
 .arrow-right {
   width: 0;
@@ -327,47 +326,45 @@ footer {
   margin-top: 5px;
   right: 5px;
   display: inline;
-  transition: all .4s ease;
 }
 .gallery-nav-link {
   background-color: #222;
   position:relative;
   border: 1px solid gray;
   display: inline;
-  margin: 0 20px;
-  transition: all .4s ease;
+  margin: 20px;
+  width: 170px;
 }
 .left-link {
-  padding: 3px 3px 3px 15px;
+  padding-right: 5px;
 }
 .right-link {
-  padding: 3px 15px 3px 5px;
+  padding-left: 5px;
 }
 .gallery-nav a {
   display:inline;
   color: gray;
-  transition: all .4s ease;
 }
 .gallery-nav-link:hover a {
   color: #eceff1;
   text-decoration: none;
-  font-size: 16px;
-  transition: all .4s ease;
 }
 .gallery-nav-link:hover {
   border: 1px solid #eceff1;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 .gallery-nav-link:hover .arrow-left {
   border-right-color: #eceff1;
-  margin-top: 6px;
-  transition: all .4s ease;
 }
 .gallery-nav-link:hover .arrow-right {
   border-left-color: #eceff1;
-  margin-top: 6px;
-  transition: all .4s ease;
+}
+.prev {
+  text-align: right;
+  padding: 5px 5px 5px 15px
+}
+.next {
+  text-align: left;
+  padding: 5px 20px 5px 5px
 }
 .galleryItem {
   overflow: hidden;
