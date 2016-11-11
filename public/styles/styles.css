@@ -595,6 +595,7 @@ tbody tr td {
 .input-element {
   color: #263238;
   display: block;
+  width: 160px;
 }
 .no-show-tax {
   color: #263238;
@@ -617,8 +618,11 @@ tbody tr td {
 .paypal {
   text-align: center;
 }
-.order-control:disabled {
-  background-color: gray;
+.accepting {
+  text-align: center;
+}
+#now-accepting {
+  width: 200px;
 }
 
 /* --- CSS for aboutUs.html --- */
@@ -672,6 +676,14 @@ tbody tr td {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
+.paypal-table table, .paypal-table td, .paypal-table tr {
+  border: none;
+  padding-top: 0;
+}
+.paypal-table p {
+  padding-left: 0;
+  padding-right: 0;
+}
 .gift-img {
   width: 100%;
   cursor: -moz-zoom-in;
@@ -689,3 +701,5 @@ tbody tr td {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
+
+/* --- CSS for thankyou.html --- */

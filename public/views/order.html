@@ -153,7 +153,7 @@
                 <label for="type">Blanknit Type: </label>
                 <span class="label label-danger" data-ng-show="order.submitted && orderForm.type.$error.required">Required!</span>
                 <select name="type" ng-change="order.resetColors()" data-ng-model="order.type" class="order-control" required>
-                  <option disabled></option>
+                  <option></option>
                   <option value="stork">Stork Blanknit</option>
                   <option value="lamb">Lamb Blanknit</option>
                 </select>
@@ -172,7 +172,7 @@
               </div>
           </div>
 
-          <div class="row" ng-class="order.showColorSelection">
+          <div ng-show="order.type=='stork'" class="row" ng-class="order.showColorSelection">
             <div class="col-xs-6 order-group">
               <label for="color1">Color 1: </label>
               <span class="label label-danger" data-ng-show="order.submitted && orderForm.color1.$error.required && order.type != 'lamb'">Required!</span>
@@ -270,6 +270,9 @@
                 <span class="paypal-button-tag-content">The safer, easier way to pay</span>
               </button>
             </span>
+          </div>
+          <div class="row accepting">
+            <img id="now-accepting" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppppcmcvdam.png" alt="Pay with PayPal, PayPal Credit or any major credit card" />
           </div>
         </form>
       </div>

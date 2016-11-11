@@ -34,6 +34,8 @@ angular.module('blankApp')
          }).when('/aboutUs', {
            templateUrl: 'views/aboutUs.html',
            controller: 'AboutController as about',
+         }).when('/thankyou', {
+           templateUrl: 'views/thankyou.html',
          }).otherwise({
            redirectTo: '/home',
          });
