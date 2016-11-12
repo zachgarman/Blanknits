@@ -21,7 +21,7 @@ router.post('/', function(req, res) {
   var size = req.body.size;
   var color1 = req.body.color1;
   var color2 = req.body.color2;
-  var giftee: req.body.giftee;
+  var giftee = req.body.giftee;
   var residentAZ = req.body.resident;
   var comments = req.body.comments;
   var total = req.body.total;
