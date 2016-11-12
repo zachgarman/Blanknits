@@ -545,6 +545,16 @@ tbody tr td {
   padding: 5px 30px;
   margin-top: 30px;
 }
+.order {
+  text-align: center;
+}
+#paypal-img {
+  width: 120px;
+}
+.paypal-accepted {
+  width: 120px;
+  margin: 0 auto;
+}
 .order-form {
   margin-bottom: 40px;
 }
@@ -622,7 +632,9 @@ tbody tr td {
   text-align: center;
 }
 #now-accepting {
+  display: block;
   width: 200px;
+  margin: 0 auto;
 }
 
 /* --- CSS for aboutUs.html --- */

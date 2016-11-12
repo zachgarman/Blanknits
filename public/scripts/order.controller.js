@@ -6,11 +6,39 @@ function OrderController(PictureService) {
 
   var order = this;
   order.yarns = [];
+  order.resident = false;
+
+  order.ppButtonValue = function() {
+    if (order.resident==false) {
+      return '5P4Y45R6LPFDS';
+    } else {
+      return 'C5HEXH8KDA4U2';
+    }
+  };
 
   // Changes value of selection from a JSON to a JS object that can be used
   order.parseJSON = function(selection) {
     order['color' + selection] = JSON.parse(order['selection' + selection]);
   };
+
+  // Populate options for both dropdowns.
+  order.typeOptions = ['Stork Blanknit', 'Lamb Blanknit'];
+  order.sizeOptions = [];
+  order.sizeOptionOptions =
+  [
+    ['Extra Small (car-seat) Stork', 'Small (crib-size) Stork', 'Medium Stork', 'Large Stork'],
+    ['Extra Small (car-seat) Lamb', 'Small (crib-size) Lamb', 'Medium Lamb', 'Large Lamb']
+  ];
+  // Options on second dropdown are dependent on first.  This function is run
+  // in order.resetColors() each time the type is changed;
+  order.changeOptions = function () {
+    var key = order.typeOptions.indexOf(order.type);
+    var sizeOptions = order.sizeOptionOptions[key];
+    order.sizeOptions = sizeOptions;
+  };
+
+
+
 
   // Determine if tax is applicable and show if so.
   order.tax = function() {
@@ -46,35 +74,35 @@ function OrderController(PictureService) {
 
   order.total = function() {
     var total = 0;
-    if (order.type == 'stork') {
+    if (order.type == 'Stork Blanknit') {
       switch (order.size) {
-        case 'extra-small':
+        case 'Extra Small (car-seat) Stork':
           total = 100;
           break;
-        case 'small':
+        case 'Small (crib-size) Stork':
           total = 150;
           break;
-        case 'medium':
+        case 'Medium Stork':
           total = 175;
           break;
-        case 'large':
+        case 'Large Stork':
           total = 190;
           break;
         default:
           total = 0;
       }
-    } else if (order.type == 'lamb') {
+    } else if (order.type == 'Lamb Blanknit') {
       switch (order.size) {
-        case 'extra-small':
+        case 'Extra Small (car-seat) Lamb':
           total = 230;
           break;
-        case 'small':
+        case 'Small (crib-size) Lamb':
           total = 350;
           break;
-        case 'medium':
+        case 'Medium Lamb':
           total = 385;
           break;
-        case 'large':
+        case 'Large Lamb':
           total = 400;
           break;
         default:
@@ -82,23 +110,24 @@ function OrderController(PictureService) {
       }
     }
     if (order.resident) {
-      total = total * 1.067;
+      total = total * 1.06701;
     }
     return total;
   };
 
   // Disable color selection for lamb blankets, remove images
   order.resetColors = function() {
-    if (order.type == 'lamb') {
+    if (order.type == 'Lamb Blanknit') {
       order.selection1 = "";
       order.selection2 = "";
       order.color1 = "";
       order.color2 = "";
       order.showColorSelection = '';
     }
-    if (order.type == 'stork') {
+    if (order.type == 'Stork Blanknit') {
       order.showColorSelection = 'space';
     }
+    order.changeOptions();
   };
 
   // S3 call to get all colors images
