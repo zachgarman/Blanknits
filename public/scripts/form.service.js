@@ -8,6 +8,9 @@ function FormService($http) {
       return $http.post('/emailRouter', formData)
         .then(function() {
           return 'Success';
+        }, function(error) {
+          console.log('Error', error);
+          return error;
         });
   };
 }

@@ -37,6 +37,8 @@ function HomeController(PictureService, FormService, $timeout) {
                    $timeout(function() {
                      home.messages = '';
                    }, 3000);
+                 } else {
+                   console.log('Error', response);
                  }
                });
 

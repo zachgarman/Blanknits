@@ -1,7 +1,7 @@
 angular.module('blankApp')
        .controller('OrderController', OrderController);
 
-function OrderController(PictureService) {
+function OrderController(PictureService, OrderService) {
   console.log('OrderController loaded.');
 
   var order = this;
@@ -64,12 +64,34 @@ function OrderController(PictureService) {
       color1: order.color1.name || 'N/A',
       color2: order.color2.name || 'N/A',
       name: order.name,
+      email: order.email,
       giftee: order.giftInfo || 'Not Provided',
       residentAZ: order.resident || 'false',
       comments: order.comments,
       total: order.total(),
     }
     console.log('summarize: ', order.summary);
+    OrderService.sendSummary(order.summary)
+               .then(function(response) {
+                 console.log(response);
+                 if (response == 'Success') {
+                   order.type = null;
+                   order.size = null;
+                   order.color1 = null;
+                   order.color2 = null;
+                   order.selection1 = null;
+                   order.selection2 = null;
+                   order.name = null;
+                   order.email = null;
+                   order.giftInfo = null;
+                   order.resident = null;
+                   order.comments = null;
+                   order.submitted = false;
+                 } else {
+                   console.log('Error', response);
+                 }
+               });
+
   };
 
   order.total = function() {
