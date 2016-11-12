@@ -58,9 +58,13 @@ function OrderController(PictureService, OrderService) {
       console.log('Invalid Form?', form.$invalid);
       return;
     }
+    var str = order.size;
+    var lastIndex = str.lastIndexOf(' ');
+    size = str.substring(0, lastIndex);
+
     order.summary = {
       type: order.type,
-      size: order.size,
+      size: size,
       color1: order.color1.name || 'N/A',
       color2: order.color2.name || 'N/A',
       name: order.name,
@@ -68,7 +72,7 @@ function OrderController(PictureService, OrderService) {
       giftee: order.giftInfo || 'Not Provided',
       residentAZ: order.resident || 'false',
       comments: order.comments,
-      total: order.total(),
+      total: order.total().toFixed(2),
     }
     console.log('summarize: ', order.summary);
     OrderService.sendSummary(order.summary)
@@ -83,6 +87,7 @@ function OrderController(PictureService, OrderService) {
                    order.selection2 = null;
                    order.name = null;
                    order.email = null;
+                   order.gifted = 'unchecked';
                    order.giftInfo = null;
                    order.resident = null;
                    order.comments = null;
