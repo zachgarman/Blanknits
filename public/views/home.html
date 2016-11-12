@@ -65,8 +65,9 @@
       </div>
 
       <div>
-        <div id="messages" class="alert alert-success" data-ng-show="home.messages" data-ng-bind="home.messages"></div>
-        <!-- <div data-ng-show="home.progress" style="color: red; font-size: 50px;">Sending…</div> -->
+        <div class="alert alert-success" data-ng-show="home.messages" data-ng-bind="home.messages"></div>
+        <div class="alert alert-warning" data-ng-show="home.error">Error!</div>
+        <div data-ng-show="home.progress" style="color: red; font-size: 50px;">Sending…</div>
         <form name="helpForm" novalidate role="form">
           <div class="form-group" ng-hide="home.messages">
             <label for="name">Your Name </label>
@@ -94,6 +95,8 @@
           </div>
 
           <button data-ng-disabled="home.progress" data-ng-click="home.submit(helpForm)" class="btn helpFormBtn">Submit</button>
+            <span class="alert alert-warning" data-ng-show="home.errorMsg">Error. Please email us at
+              <a class="about-link" href="mailto:margee@blanknits.com" target="_top">margee@blanknits.com.</a></span>
         </form>
       </div>
     </div>

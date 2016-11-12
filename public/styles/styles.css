@@ -715,3 +715,9 @@ tbody tr td {
 }
 
 /* --- CSS for thankyou.html --- */
+.thanks {
+  text-align: center;
+}
+.thanks-p {
+  text-align: justify;
+}

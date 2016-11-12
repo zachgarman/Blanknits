@@ -74,6 +74,7 @@ function OrderController(PictureService, OrderService) {
       comments: order.comments,
       total: order.total().toFixed(2),
     }
+
     console.log('summarize: ', order.summary);
     OrderService.sendSummary(order.summary)
                .then(function(response) {

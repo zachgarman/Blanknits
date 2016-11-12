@@ -13,7 +13,7 @@ function HomeController(PictureService, FormService, $timeout) {
     if (form.$invalid) {
       return;
     }
-
+    home.progress = true;
     // Default values for the request.
     var formData = {
       'name' : home.name,
@@ -34,11 +34,19 @@ function HomeController(PictureService, FormService, $timeout) {
                    home.comments = null;
                    home.messages = 'Your form has been sent!';
                    home.submitted = false;
+                   home.progress = '';
+                   home.error = false;
                    $timeout(function() {
                      home.messages = '';
                    }, 3000);
                  } else {
+                   home.errorMsg = true;
+                   home.error = true
+                   home.progress = '';
                    console.log('Error', response);
+                   $timeout(function() {
+                     home.error = '';
+                   }, 3000);
                  }
                });
 
