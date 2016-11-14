@@ -7,7 +7,7 @@ function FormService($http) {
       console.log('FormService: ',formData);
       return $http.post('/emailRouter', formData)
         .then(function() {
-          return 'Succes';
+          return 'Success';
         }, function(error) {
           console.log('Error', error);
           return error;
