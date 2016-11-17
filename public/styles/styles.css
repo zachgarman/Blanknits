@@ -291,6 +291,7 @@ footer {
 }
 
 /* --- CSS for gallery.html --- */
+
 .gallery {
   text-align: center;
 }
@@ -432,6 +433,19 @@ img.larger-image {
 
 /* --- CSS for colors.html --- */
 
+.modal-content {
+  background-color: #222;
+}
+.modal-body >img.modal-yarn {
+  width: 200px;
+  height: 270px;
+}
+.modal-body {
+  height: 370px;
+}
+.close, .close:hover {
+  color: #eceff1;
+}
 .colors-heading {
   text-align: center;
 }

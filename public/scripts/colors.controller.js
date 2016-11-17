@@ -7,6 +7,12 @@ function ColorsController (PictureService) {
   var colors = this;
   colors.yarns = [];
 
+  colors.showModal = function(url, name) {
+    colors.modalUrl = url;
+    colors.modalName = name;
+    console.log(url, name);
+  };
+
   // S3 call to get all colors image
   colors.getYarns = function() {
     PictureService.getYarns()

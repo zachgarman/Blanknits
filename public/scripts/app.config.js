@@ -28,6 +28,10 @@ angular.module('blankApp')
          }).when('/products/colors', {
            templateUrl: 'views/products/colors.html',
            controller: 'ColorsController as colors',
+         }).when('/products/colorsmodal', {
+          //  this one was added here
+           templateUrl: 'views/products/colorsmodal.html',
+           controller: 'ColorsController as colors',
          }).when('/order', {
            templateUrl: 'views/order.html',
            controller: 'OrderController as order',
