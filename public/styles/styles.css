@@ -436,11 +436,11 @@ img.larger-image {
 .modal-content {
   background-color: #222;
 }
-.modal-body >img.modal-yarn {
+.modal-body > img.modal-yarn {
   width: 200px;
   height: 270px;
 }
-.modal-body {
+.modal-body.modal-yarn-body {
   height: 370px;
 }
 .close, .close:hover {

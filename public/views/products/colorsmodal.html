@@ -13,17 +13,17 @@
 
         <p class="yarn-name">{{yarn.name}}</p>
 
-        <!-- Modal -->
+        <!-- Yarn Modal -->
         <div class="modal fade" id="myModal{{$index}}" role="dialog">
           <div class="modal-dialog modal-sm">
 
-            <!-- Modal content-->
+            <!-- Yarn Modal content-->
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h3 class="modal-title">{{yarn.name}}</h3>
               </div>
-              <div class="modal-body">
+              <div class="modal-body modal-yarn-body">
                 <img class="modal-yarn" ng-src="{{yarn.url}}"
               </div>
               <div class="modal-footer">
@@ -33,13 +33,11 @@
 
           </div>
         </div>
-
+        
       </div>
     </div>
   </div>
 
-
-<!--
   <div class="row display-wool">
     <h2>Lamb Colors - 90% Wool, 10% Nylon Yarn</h2>
     <div class="galleryItem" ng-class="colors.sizeClass[$index]" ng-repeat="picture in colors.allPics.lamb">
@@ -48,7 +46,6 @@
       ng-class="colors.sizeClass[$index]" ng-src="{{picture}}"
       class="galleryPic img-responsive" alt="Blanknits image" ng-src="{{picture}}" />
     </div>
-
-  </div> -->
+  </div>
 
 </div>
