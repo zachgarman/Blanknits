@@ -437,6 +437,7 @@ img.larger-image {
   background-color: #222;
 }
 .modal-body > img.modal-yarn {
+  cursor: default;
   width: 200px;
   height: 270px;
 }
