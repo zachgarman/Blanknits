@@ -4,25 +4,26 @@ angular.module('blankApp')
 function PictureService($http) {
   // Send request to server to get all stork blankets from S3.
   this.getPics = function() {
-    return $http.get('/blankGallery/blanknits-images')
-      .then(function(urls) {
-        responseObject = {
-          babyName: [],
-          babyMisc: [],
-          babyQuilt: [],
-          assorted: [],
-          lamb: [],
-          logo: [],
-          momento: [],
-          symbol: [],
-          misc: [],
-        };
-        urls.data.forEach(function(image) {
-          var innerKey = image.code;
-          responseObject[innerKey].push(image.url);
+      return $http.get('/blankGallery/blanknits-images')
+        .then(function(urls) {
+          responseObject = {
+            babyName: [],
+            babyMisc: [],
+            babyQuilt: [],
+            assorted: [],
+            lamb: [],
+            logo: [],
+            momento: [],
+            symbol: [],
+            misc: [],
+          };
+          urls.data.forEach(function(image) {
+            var innerKey = image.code;
+            responseObject[innerKey].push(image.url);
+          });
+          return responseObject;
         });
-        return responseObject;
-      });
+
   };
 
   // Get the home-page main image, image will be the first one in the bucket if

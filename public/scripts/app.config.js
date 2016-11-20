@@ -28,10 +28,6 @@ angular.module('blankApp')
          }).when('/products/colors', {
            templateUrl: 'views/products/colors.html',
            controller: 'ColorsController as colors',
-         }).when('/products/colorsmodal', {
-          //  this one was added here
-           templateUrl: 'views/products/colorsmodal.html',
-           controller: 'ColorsController as colors',
          }).when('/order', {
            templateUrl: 'views/order.html',
            controller: 'OrderController as order',
@@ -40,6 +36,9 @@ angular.module('blankApp')
            controller: 'AboutController as about',
          }).when('/thankyou', {
            templateUrl: 'views/thankyou.html',
+         }).when('/admin/home', {
+           templateUrl: 'views/admin/home.html',
+           controller: 'AdminController as admin',
          }).otherwise({
            redirectTo: '/home',
          });
