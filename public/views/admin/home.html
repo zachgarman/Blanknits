@@ -9,9 +9,19 @@
 
   <div class="upload col-xs-12 col-md-6 col-lg-4">
     <h3>Upload a new image.</h3>
-    <form name="uploadForm" id="uploadForm">
-      <label>Category:</label>
-      <select  name="category" placeholder="Select">
+
+    <label for="file-input">Please select a file</label>
+    <input type="file" name="file-input" id="file-input">
+    <img style="border:1px solid gray;width:300px;"  id="preview" src="https://s3-us-west-2.amazonaws.com/blanknits-logos/Main-Logo.png">
+
+    <form method="POST" action="/save-details" name="uploadForm" id="uploadForm">
+
+      <input type="hidden" id="avatar-url" name="avatar-url" value="/images/default.png">
+      <label for="fileName">File Name:</label>
+      <input type="text" name="fileName" id="fileName" placeholder="Name..."><br>
+
+      <label for="category">Category:</label>
+      <select id="category" name="category" placeholder="Select">
         <option selected disabled>Select...</option>
         <option value="babyName">Baby name</option>
         <option value="customized">Customized</option>
@@ -20,6 +30,7 @@
         <option value="momento">Momento</option>
         <option value="symbol">Symbol</option>
       </select>
+      <input type="submit" value="Update profile" />
     </form>
 
   </div>

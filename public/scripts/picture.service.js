@@ -23,7 +23,6 @@ function PictureService($http) {
           });
           return responseObject;
         });
-
   };
 
   // Get the home-page main image, image will be the first one in the bucket if

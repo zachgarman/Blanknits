@@ -743,6 +743,9 @@ tbody tr td {
 .admin {
   text-align: center;
 }
-#uploadForm > select {
+#file-input {
+  margin: auto;
+}
+#uploadForm > select, #uploadForm > input {
   color: #263238;
 }
