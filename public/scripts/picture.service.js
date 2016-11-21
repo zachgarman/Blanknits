@@ -1,12 +1,12 @@
 angular.module('blankApp')
        .service('PictureService', PictureService);
 
-function PictureService($http) {
+function PictureService($http, Upload) {
   // Send request to server to get all stork blankets from S3.
   this.getPics = function() {
       return $http.get('/blankGallery/blanknits-images')
         .then(function(urls) {
-          responseObject = {
+          this.responseObject = {
             babyName: [],
             babyMisc: [],
             babyQuilt: [],
@@ -19,9 +19,9 @@ function PictureService($http) {
           };
           urls.data.forEach(function(image) {
             var innerKey = image.code;
-            responseObject[innerKey].push(image.url);
+            this.responseObject[innerKey].push(image.url);
           });
-          return responseObject;
+          return this.responseObject;
         });
   };
 
@@ -41,4 +41,5 @@ function PictureService($http) {
         return yarns.data;
       });
   }
+
 }

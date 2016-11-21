@@ -10,18 +10,16 @@
   <div class="upload col-xs-12 col-md-6 col-lg-4">
     <h3>Upload a new image.</h3>
 
-    <label for="file-input">Please select a file</label>
-    <input type="file" name="file-input" id="file-input">
+
     <img style="border:1px solid gray;width:300px;"  id="preview" src="https://s3-us-west-2.amazonaws.com/blanknits-logos/Main-Logo.png">
 
-    <form method="POST" action="/save-details" name="uploadForm" id="uploadForm">
-
-      <input type="hidden" id="avatar-url" name="avatar-url" value="/images/default.png">
+    <form  enctype="multipart/form-data" name="uploadForm" id="uploadForm">
+      <label for="file-input">Please select a file</label>
+      <input type="file" ng-model="admin.upload.file" ngf-select ngf-max-size="10MB" name="file-input" id="file-input" required>
       <label for="fileName">File Name:</label>
-      <input type="text" name="fileName" id="fileName" placeholder="Name..."><br>
-
+      <input type="text" name="fileName" ng-model="admin.upload.name" id="fileName" placeholder="Name..." required><br>
       <label for="category">Category:</label>
-      <select id="category" name="category" placeholder="Select">
+      <select id="category" name="category" ng-model="admin.upload.category" placeholder="Select">
         <option selected disabled>Select...</option>
         <option value="babyName">Baby name</option>
         <option value="customized">Customized</option>
@@ -30,7 +28,7 @@
         <option value="momento">Momento</option>
         <option value="symbol">Symbol</option>
       </select>
-      <input type="submit" value="Update profile" />
+      <input type="submit" ng-click="admin.uploadPicture()" value="Upload Image" />
     </form>
 
   </div>

@@ -1,1 +1,1 @@
-angular.module('blankApp', ['ngRoute', 'tw.directives.clickOutside']);
+angular.module('blankApp', ['ngRoute', 'tw.directives.clickOutside', 'ngFileUpload']);
