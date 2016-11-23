@@ -40,6 +40,10 @@ function PictureService($http, Upload) {
       .then(function(yarns) {
         return yarns.data;
       });
+  };
+
+  this.newName = function(data) {
+    $http.put('/blankGallery', data);
   }
 
 }

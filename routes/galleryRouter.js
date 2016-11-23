@@ -4,6 +4,7 @@ const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 const multerS3 = require('multer-s3');
 const path = require('path');
+const q = require('q');
 
 AWS.config.loadFromPath('./config.json');
 
@@ -17,10 +18,8 @@ var uploads3 = multer({
       cb(null, { fieldName: file.fieldname });
     },
     key: function (req, file, cb) {
-      console.log('originalname: ', file.originalname);
-      console.log('req.body', req.body);
       //creates a name for the file with the file extention
-      cb(null, file.originalname);
+      cb(null, 'uploadFile');
     },
   }),
 });
@@ -77,10 +76,39 @@ router.get('/:bucket', function(req, res) {
 
 // upload new image to amazon s3
 router.post('/', uploads3.single('file'), function(req, res) {
-  console.log('It worked.');
-  console.log('req.body.name', req.body.name);
-  console.log('req.body.category', req.body.category);
   res.sendStatus(204);
+});
+
+// rename object
+router.put('/', function(req, res) {
+  defer = q.defer()
+  var oldKey = 'uploadFile';
+  var newKey = req.body.category + '_' + req.body.name + '.jpg';
+  var bucket = 'blanknits-images';
+  var putParams = {
+    ACL: 'public-read',
+    CopySource: bucket + '/uploadFile',
+    Bucket: bucket,
+    Key: newKey
+  };
+  s3.copyObject(putParams, function(err) {
+    if (err) {
+      defer.reject(err);
+    } else {
+      var deleteParams = {
+        Bucket: bucket,
+        Key: oldKey
+      };
+      s3.deleteObject(deleteParams, function(err) {
+        if (err) {
+          defer.reject(err);
+        } else {
+          defer.resolve();
+        }
+      });
+    }
+    return defer.promise
+  });
 });
 
 module.exports = router;

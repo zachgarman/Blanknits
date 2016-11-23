@@ -196,6 +196,16 @@ footer {
 .footer {
   margin-top: 30px;
 }
+.footer-text {
+  color: #eceff1;
+  text-decoration: none;
+}
+.footer-text:hover, .footer-text:active,
+.footer-text:visited, .footer-text:focus {
+  color: #eceff1;
+  text-decoration: none;
+  cursor: default;
+}
 
 /* --- CSS for home.html --- */
 
@@ -743,9 +753,71 @@ tbody tr td {
 .admin {
   text-align: center;
 }
-#file-input {
-  margin: auto;
+#uploadForm {
+  text-align: left;
 }
-#uploadForm > select, #uploadForm > input {
+#file-input {
+  color: #eceff1;
+}
+.form-info > select, .form-info > input {
   color: #263238;
+}
+.upload-form-style {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.form-info {
+  text-align: left;
+  margin-top: 10px;
+}
+#category, #fileName {
+  width: 80%;
+  height: 26px;
+}
+.upload-form-button {
+  text-align: center;
+  color: #263238;
+  width: 100%;
+  margin-top: 20px;
+  background: linear-gradient(#444, white);
+}
+.upload-form-button:hover {
+  background: linear-gradient(darkslategray, lightslategray);
+  color: white;
+}
+#file-input {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.#file-input + label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: inline-block;
+}
+.file-upload {
+  text-align: center;
+}
+#file-input:focus, #file-label,
+#file-input {
+  background: linear-gradient(#444, white);
+  color: #263238;
+  padding: 7px;
+  font-weight: normal;
+}
+#file-label:hover {
+  background: linear-gradient(darkslategray, lightslategray);
+  color: white;
+}
+#file-input, #file-label {
+  cursor: pointer;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
 }

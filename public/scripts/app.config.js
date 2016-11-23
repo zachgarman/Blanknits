@@ -36,6 +36,8 @@ angular.module('blankApp')
            controller: 'AboutController as about',
          }).when('/thankyou', {
            templateUrl: 'views/thankyou.html',
+         }).when('/admin/login', {
+           templateUrl: 'views/admin/login.html',
          }).when('/admin/home', {
            templateUrl: 'views/admin/home.html',
            controller: 'AdminController as admin',
