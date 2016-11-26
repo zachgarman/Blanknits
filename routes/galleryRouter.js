@@ -14,11 +14,14 @@ var uploads3 = multer({
   storage: multerS3({
     s3: s3,
     bucket: 'blanknits-images',
+    acl: 'public-read',
     metadata: function(req, file, cb) {
       cb(null, { fieldName: file.fieldname });
     },
     key: function (req, file, cb) {
       //creates a name for the file with the file extention
+      // cb(null, Date.now().toString() + path.extname(file.originalname));
+
       cb(null, 'uploadFile');
     },
   }),
@@ -76,14 +79,15 @@ router.get('/:bucket', function(req, res) {
 
 // upload new image to amazon s3
 router.post('/', uploads3.single('file'), function(req, res) {
-  res.sendStatus(204);
+  console.log('DB REQ.body:', req.body);
+  res.send('Success');
 });
 
 // rename object
 router.put('/', function(req, res) {
   defer = q.defer()
   var oldKey = 'uploadFile';
-  var newKey = req.body.category + '_' + req.body.name + '.jpg';
+  var newKey = req.body.category + '_' + req.body.name + req.body.extName;
   var bucket = 'blanknits-images';
   var putParams = {
     ACL: 'public-read',

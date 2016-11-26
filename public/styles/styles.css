@@ -753,6 +753,20 @@ tbody tr td {
 .admin {
   text-align: center;
 }
+.preview-block {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.preview {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 #uploadForm {
   text-align: left;
 }

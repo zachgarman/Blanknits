@@ -9,9 +9,10 @@
 
   <div class="upload col-xs-12 col-md-6 col-lg-4">
     <h3>Upload a new image.</h3>
-    <div data-ng-show="admin.progress" style="color: red; font-size: 50px;">Uploading…</div>
-
-    <img style="border:1px solid gray;width:300px;"  id="preview" src="https://s3-us-west-2.amazonaws.com/blanknits-logos/Main-Logo.png">
+    <div class="preview-block">
+      <img ng-show="admin.upload.file!=undefined" ngf-thumbnail="admin.upload.file" class="preview">
+      <img ng-hide="admin.upload.file!=undefined" id="preview" class="preview" src="https://s3-us-west-2.amazonaws.com/blanknits-logos/Main-Logo.png">
+    </div>
     <form ng-hide="admin.success" enctype="multipart/form-data" name="uploadForm" id="uploadForm">
       <div class="col-xs-12 form-info file-upload">
         <label id="file-label" for="file-input">Please select a file</label>
@@ -35,10 +36,13 @@
           <option value="symbol">Symbol</option>
         </select>
       </div>
-      <div ng-hide="admin.upload.category==undefined || admin.upload.name==undefined || admin.upload.file==undefined" class="col-xs-12">
+      <div ng-hide="admin.upload.category==undefined || admin.upload.name==undefined ||
+      admin.upload.file==undefined || admin.progress==true || admin.success==true"
+      class="col-xs-12">
         <input class="upload-form-button" type="submit" ng-click="admin.uploadPicture(uploadForm)" value="Upload Image" />
       </div>
     </form>
+    <div data-ng-show="admin.progress" style="color: red; font-size: 50px;">Uploading…</div>
     <div data-ng-show="admin.success" style="color: green; font-size: 40px;">Success!</div>
   </div>
 
