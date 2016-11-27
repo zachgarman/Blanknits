@@ -4,8 +4,17 @@ const bodyParser = require('body-parser');
 const galleryRouter = require('./routes/galleryRouter');
 const emailRouter = require('./routes/emailRouter');
 const orderRouter = require('./routes/orderRouter');
+// const passport = require('passport');
+// const session = require('express-session');
+// const LocalStrategy = require('passport-local').Strategy;
+// const basicAuth = require('basic-auth');
+const admin = require('./routes/adminRouter');
 
 const app = express();
+
+var username = process.env.username;
+var password = process.env.password;
+
 
 // middleware
 app.use(bodyParser.urlencoded({extended: true}));

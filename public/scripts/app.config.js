@@ -38,6 +38,7 @@ angular.module('blankApp')
            templateUrl: 'views/thankyou.html',
          }).when('/admin/login', {
            templateUrl: 'views/admin/login.html',
+           controller: 'LoginController as login',
          }).when('/admin/home', {
            templateUrl: 'views/admin/home.html',
            controller: 'AdminController as admin',

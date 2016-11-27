@@ -2,4 +2,13 @@
   <h1>Login Page</h1>
   <!-- TODO - use passport or oauth to allow access -->
   <p>This doesn't work.  Yet.  But click <a href="/admin/home">here</a> to visit the admin page</p>
+  <form name="loginForm" class="login-form">
+    <label for="username" id="username">Username:</label>
+    <input name="username" type="text" ng-model="login.data.username" />
+
+    <label for="password" id="password">Password:</label>
+    <input name="password" type="text" ng-model="login.data.password" />
+
+    <button id="login-button" ng-click="login.login()">Submit</button>
+  </form>
 </div>

@@ -748,6 +748,11 @@ tbody tr td {
   text-align: justify;
 }
 
+/* --- CSS for admin/login.html --- */
+.login-form > input, .login-form > button {
+  color: #263238;
+}
+
 /* --- CSS for admin/home.html --- */
 
 .admin {
