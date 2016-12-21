@@ -12,7 +12,7 @@ router.post('/', function(req, res) {
     port:587,
     auth: {
       user: "margee@blanknits.com",
-      pass: "blanknits"
+      pass: "blankn1ts4u!"
     }
   }));
   var name = req.body.name;
