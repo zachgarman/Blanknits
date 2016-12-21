@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
+require('dotenv').config();
 
 router.post('/', function(req, res) {
   console.log('made it to the email router', req.body);
@@ -11,8 +12,8 @@ router.post('/', function(req, res) {
     secureConnection: false,
     port:587,
     auth: {
-      user: "margee@blanknits.com",
-      pass: "blankn1ts4u!"
+      user: process.env.EMAIL,
+      pass: process.env.EMAIL_PASS
     }
   }));
   var name = req.body.name;

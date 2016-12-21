@@ -7,6 +7,7 @@ const path = require('path');
 const q = require('q');
 
 // AWS.config.loadFromPath('./config.json');
+require('dotenv').config();
 
 var s3 = new AWS.S3();
 

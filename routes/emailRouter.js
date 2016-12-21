@@ -11,8 +11,8 @@ router.post('/', function(req, res) {
     secureConnection: false,
     port:587,
     auth: {
-      user: "margee@blanknits.com",
-      pass: "blankn1ts4u!"
+      user: process.env.EMAIL,
+      pass: process.env.EMAIL_PASS
     }
   }));
   var name = req.body.name;
