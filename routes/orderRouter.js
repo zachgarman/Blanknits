@@ -11,7 +11,7 @@ router.post('/', function(req, res) {
     secureConnection: false,
     port:587,
     auth: {
-      user: "zachgarman2@gmail.com",
+      user: "margee@blanknits.com",
       pass: "blanknits"
     }
   }));
@@ -28,7 +28,7 @@ router.post('/', function(req, res) {
 
   var mailOptions = {
       from: '"blanknits.com ?" <blanknits.com>', // sender address
-      to: 'zachgarman2@gmail.com', // list of receivers
+      to: 'margee@blanknits.com', // list of receivers
       subject: 'Information requested', // Subject line
       text: 'Hi, Margee. A purchase was attempted for Blanknits. Check your ' +
             'PayPal account to ensure it succeeded.  Here are the details: ' +
