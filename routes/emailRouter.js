@@ -11,7 +11,7 @@ router.post('/', function(req, res) {
     secureConnection: false,
     port:587,
     auth: {
-      user: "zachgarman2@gmail.com",
+      user: "margee@blanknits.com",
       pass: "blanknits"
     }
   }));
@@ -22,7 +22,7 @@ router.post('/', function(req, res) {
 
   var mailOptions = {
       from: '"blanknits.com ?" <blanknits.com>', // sender address
-      to: 'zachgarman2@gmail.com', // list of receivers
+      to: 'margee@blanknits.com', // list of receivers
       subject: 'Information requested', // Subject line
       text: 'Name:  ' + name + '\n\nEmail:  ' + email + '\n\nPhone:  ' +
             phone + '\n\nComments:  ' + comments,
