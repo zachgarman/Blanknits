@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
+require('dotenv').config();
 
 router.post('/', function(req, res) {
   console.log('made it to the email router', req.body);
