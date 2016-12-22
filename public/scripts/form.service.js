@@ -3,6 +3,7 @@ angular.module('blankApp')
 
 
 function FormService($http) {
+  console.log('env vars', process.env.EMAIL);
   this.sendRequest = function(formData) {
       console.log('FormService: ',formData);
       return $http.post('/emailRouter', formData)
