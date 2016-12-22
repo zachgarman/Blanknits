@@ -6,18 +6,19 @@ router.post('/', function(req, res) {
   console.log('made it to the email router', req.body);
 
   // creates reusable transporter object using the default SMTP transport
-  var transporter = nodemailer.createTransport({
-    service: 'godaddy',
+  var transporter = nodemailer.createTransport(
+    // service: 'godaddy',
 
-    // smtpTransport({
-    // host: "smtp.gmail.com",
-    // secureConnection: false,
-    // port:587,
+    smtpTransport({
+    host: "smtp.gmail.com",
+    secureConnection: false,
+    port:587,
     auth: {
       user: process.env.EMAIL,
       pass: process.env.EMAIL_PASS
     }
-  });
+  // });
+  }));
   var name = req.body.name;
   var email = req.body.email;
   var phone = req.body.phoneNumber || 'Not Provided';
