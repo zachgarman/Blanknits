@@ -49,7 +49,6 @@ router.post('/', function(req, res) {
       res.sendStatus(500);
     } else {
       console.log('Message sent: ', response);
-      console.log('EMAIL: ', process.env.EMAIL)
       res.sendStatus(200);
     }
   });
