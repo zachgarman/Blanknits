@@ -45,7 +45,7 @@ router.post('/', function(req, res) {
     // email did not send
     if(error){
       console.log('Error sending email: ', error);
-      res.send(error);
+      res.sendStatus(500);
     } else {
       console.log('Message sent: ', response);
       console.log('EMAIL: ', process.env.EMAIL)
