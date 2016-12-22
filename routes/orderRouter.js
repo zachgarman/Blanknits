@@ -29,7 +29,7 @@ router.post('/', function(req, res) {
 
   var mailOptions = {
       from: '"blanknits.com ?" <blanknits.com>', // sender address
-      to: 'margee@blanknits.com', // list of receivers
+      to: process.env.EMAIL, // list of receivers
       subject: 'Information requested', // Subject line
       text: 'Hi, Margee. A purchase was attempted for Blanknits. Check your ' +
             'PayPal account to ensure it succeeded.  Here are the details: ' +
