@@ -23,7 +23,7 @@ router.post('/', function(req, res) {
   // // });
   // }));
   var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'godaddy',
     auth: {
       user: process.env.EMAIL,
       pass: process.env.EMAIL_PASS
