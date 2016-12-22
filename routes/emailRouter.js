@@ -5,6 +5,8 @@ require('dotenv').config();
 
 router.post('/', function(req, res) {
   console.log('made it to the email router', req.body);
+  console.log('email', process.env.EMAIL);
+  console.log('pass', process.env.EMAIL_PASS);
 
   // creates reusable transporter object using the default SMTP transport
   // var transporter = nodemailer.createTransport(
